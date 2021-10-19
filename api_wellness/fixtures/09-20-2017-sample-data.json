@@ -1,0 +1,1882 @@
+[
+{
+    "model": "api_wellness.section",
+    "pk": 1,
+    "fields": {
+        "name": "CUSTOM",
+        "description": "Think: wellness, from my head to-ma-toes. Nearly everything involving physical, social or mental wellness is right here -- read a book, meditate or try a new healthy recipe? You deserve apple-ause--log those points here!",
+        "active": true
+    }
+},
+{
+    "model": "api_wellness.section",
+    "pk": 2,
+    "fields": {
+        "name": "ASI",
+        "description": "This category includes all activities you can participate in that are provided by ASI. Whether you just finished bowling at the USU, swimming at the SRWC, powering through a TRX class, or just had a really physically strenuous shift at work -- this is where you can log any social or physical wellness-related activity accomplished in the USU & SRWC!",
+        "active": true
+    }
+},
+{
+    "model": "api_wellness.section",
+    "pk": 4,
+    "fields": {
+        "name": "EVENTS",
+        "description": "",
+        "active": true
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 1,
+    "fields": {
+        "name": "UNCATEGORIZED",
+        "description": "",
+        "active": true,
+        "points": 1,
+        "section": 1
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 2,
+    "fields": {
+        "name": "AQUATICS & SAFETY",
+        "description": "Have a watershed moment in the USU's world famous pool? Maybe you made some waves in the SRWC aquatics center? Well, you're doing just swimmingly; log your aquatics points below!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 3,
+    "fields": {
+        "name": "BEACH BALANCE",
+        "description": "Beach Balance puts the res(t) in stressed, cares about your core and educates you on your apple-tite! Hang out in a hammock or had a much-needed massage? It's (k)not a problem to log in those points here! see what we did there ;)",
+        "active": true,
+        "points": 4,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 4,
+    "fields": {
+        "name": "INCLUSIVE ACTIVITY",
+        "description": "No matter your capability, these programs give you the chance to have loads of fun and interact with people you normally wouldn't -- disability or not! If you just completed one of our inclusive programs, be sure to log your awesomeness below!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 5,
+    "fields": {
+        "name": "FITNESS CLASS",
+        "description": "Don't forget to log in your points for finishing that fitness class or engaging in a fitness program!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 6,
+    "fields": {
+        "name": "WEIGHT TRAINING",
+        "description": "Red Bull never gave you wings -- but your lat pulldowns just did. You mirin' yet? We are! Log in your points for doing anything involving weight training below. And remember, friends don't let friends skip leg day!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 7,
+    "fields": {
+        "name": "ROCK WALL ACTIVITY",
+        "description": "Get a rockin' workout in while exercising on the edge at the rock wall? If you completed any rock wall-related program, class or some old-fashioned rock climbing, feel free to log your points here and belay away!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 8,
+    "fields": {
+        "name": "OUTDOOR ACTIVITY",
+        "description": "If you enjoyed some fresh air during your workout, yoganna be disappointed if you forget to log in your points for outdoor yoga, outdoor adventure trips or any other outdoor programs!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 9,
+    "fields": {
+        "name": "LEAGUE GAME",
+        "description": "Whether you served 'em and left it all at the racquetball net, let your feet do the talkin' during intramural soccer, or swished a few three's into the hoop, you are set to log in points for participating in intramural league games!",
+        "active": true,
+        "points": 5,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 10,
+    "fields": {
+        "name": "PICK-UP GAME",
+        "description": "Picking up and court-ing folks playing racquetball is fun until they start scoring like crazy. Not to worry though -- those basketball players may shoot threes, but to us, you're a ten! Log your points here, Kobe.",
+        "active": true,
+        "points": 4,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 11,
+    "fields": {
+        "name": "CARDIO",
+        "description": "Cardio is an ancient practice developed to make water taste better. Remember: the faster you run, the quicker you're done, and the sooner you get to log in your points for cardio activity! Way to take care of your heart; now it's time to enjoy that avaca(r)dio you've been craving.",
+        "active": true,
+        "points": 4,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 12,
+    "fields": {
+        "name": "BIKING",
+        "description": "Leading cycle-logy studies prove biking reduces mental stress and improves cardio -- it's a vicious cycle. If you can't handle-bars and chose to bike instead, log in your points here!",
+        "active": true,
+        "points": 4,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 13,
+    "fields": {
+        "name": "GAMES & LEISURE",
+        "description": "Catch a movie or rock out to a noontime concert on campus? Bowling's right up your alley too! So log in those points and keep knocking them down, one pin at a time! Keep paddling at this rate you ping pong black belt, you, and you'll beat Forrest Gump.",
+        "active": true,
+        "points": 3,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 14,
+    "fields": {
+        "name": "ACTIVE WORK SHIFT",
+        "description": "Spend all day chasing children around at the IPCDC? Recycling Center popping with non-stop activity? Well, here is where you can log those highly active work hours! Thank you for working so hard; keep it up!",
+        "active": true,
+        "points": 3,
+        "section": 2
+    }
+},
+{
+    "model": "api_wellness.category",
+    "pk": 27,
+    "fields": {
+        "name": "Uncategorized",
+        "description": "",
+        "active": false,
+        "points": 1,
+        "section": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 1,
+    "fields": {
+        "name": "Aquatics area classes",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 2,
+    "fields": {
+        "name": "Inner tube Water Polo",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 3,
+    "fields": {
+        "name": "Swimming",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 4,
+    "fields": {
+        "name": "Laps",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 5,
+    "fields": {
+        "name": "Watercraft Wednesday",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 6,
+    "fields": {
+        "name": "Aqua Zumba",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 7,
+    "fields": {
+        "name": "Pool Play Friday",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 8,
+    "fields": {
+        "name": "Volleyball",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 9,
+    "fields": {
+        "name": "CPR/First Aid/AED",
+        "active": true,
+        "category": 2
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 10,
+    "fields": {
+        "name": "Aromatherapy",
+        "active": true,
+        "category": 3
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 11,
+    "fields": {
+        "name": "Meditation Mondays",
+        "active": true,
+        "category": 3
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 12,
+    "fields": {
+        "name": "Well Rested Wednesdays",
+        "active": true,
+        "category": 3
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 13,
+    "fields": {
+        "name": "Foam Rolling Fridays",
+        "active": true,
+        "category": 3
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 14,
+    "fields": {
+        "name": "Workshops",
+        "active": true,
+        "category": 3
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 15,
+    "fields": {
+        "name": "Wheelchair Sports",
+        "active": true,
+        "category": 4
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 16,
+    "fields": {
+        "name": "Inclusive Sport Fridays",
+        "active": true,
+        "category": 4
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 17,
+    "fields": {
+        "name": "Dark Climb",
+        "active": true,
+        "category": 4
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 18,
+    "fields": {
+        "name": "No Barriers Climb",
+        "active": true,
+        "category": 4
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 19,
+    "fields": {
+        "name": "Bod Pod testing",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 20,
+    "fields": {
+        "name": "Yoga",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 21,
+    "fields": {
+        "name": "Fitness Orientation",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 22,
+    "fields": {
+        "name": "Butts & Gutts",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 23,
+    "fields": {
+        "name": "Body Bar",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 24,
+    "fields": {
+        "name": "Meditation",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 25,
+    "fields": {
+        "name": "Fit Camp",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 26,
+    "fields": {
+        "name": "Ab Burner",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 27,
+    "fields": {
+        "name": "TRX",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 28,
+    "fields": {
+        "name": "Get on the Ball & Sculpt",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 29,
+    "fields": {
+        "name": "Tactical Martial Arts",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 30,
+    "fields": {
+        "name": "Zumba",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 31,
+    "fields": {
+        "name": "Pilates",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 32,
+    "fields": {
+        "name": "Cardio Kick",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 33,
+    "fields": {
+        "name": "Muay Thai",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 34,
+    "fields": {
+        "name": "Open Bag",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 35,
+    "fields": {
+        "name": "Boxing",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 36,
+    "fields": {
+        "name": "Aqua Zumba",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 37,
+    "fields": {
+        "name": "Spin",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 38,
+    "fields": {
+        "name": "Fitball",
+        "active": true,
+        "category": 5
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 39,
+    "fields": {
+        "name": "Free Weights",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 40,
+    "fields": {
+        "name": "Weight Machines",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 41,
+    "fields": {
+        "name": "Bench Press",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 42,
+    "fields": {
+        "name": "Olympic platform",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 43,
+    "fields": {
+        "name": "Leg Press",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 44,
+    "fields": {
+        "name": "Dumbbells",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 45,
+    "fields": {
+        "name": "Chest Exercises",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 46,
+    "fields": {
+        "name": "Barbells",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 47,
+    "fields": {
+        "name": "Powerlifting",
+        "active": true,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 48,
+    "fields": {
+        "name": "Buttefly",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 49,
+    "fields": {
+        "name": "Calf raise",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 50,
+    "fields": {
+        "name": "Lat pulldown",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 51,
+    "fields": {
+        "name": "Chest press",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 52,
+    "fields": {
+        "name": "Triceps pushdown",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 53,
+    "fields": {
+        "name": "Shoulder press",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 54,
+    "fields": {
+        "name": "Squats",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 55,
+    "fields": {
+        "name": "Triceps curl",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 56,
+    "fields": {
+        "name": "Lunges",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 57,
+    "fields": {
+        "name": "Biceps curl",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 58,
+    "fields": {
+        "name": "Deadlifts",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 59,
+    "fields": {
+        "name": "Crunches",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 60,
+    "fields": {
+        "name": "Wall sits",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 61,
+    "fields": {
+        "name": "Sit-Ups",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 62,
+    "fields": {
+        "name": "Leg curl",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 63,
+    "fields": {
+        "name": "Burpees",
+        "active": false,
+        "category": 6
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 64,
+    "fields": {
+        "name": "Rock Climbing",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 65,
+    "fields": {
+        "name": "Rock Climbing Class",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 66,
+    "fields": {
+        "name": "Mini Challenge Series",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 67,
+    "fields": {
+        "name": "Friday Night Game Night",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 68,
+    "fields": {
+        "name": "Climbing Comp",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 69,
+    "fields": {
+        "name": "Slacklining",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 70,
+    "fields": {
+        "name": "Belay A Mile",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 71,
+    "fields": {
+        "name": "Mile High Challenge",
+        "active": true,
+        "category": 7
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 72,
+    "fields": {
+        "name": "Outdoor Adventure Trip",
+        "active": true,
+        "category": 8
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 73,
+    "fields": {
+        "name": "Outdoor Yoga",
+        "active": true,
+        "category": 8
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 74,
+    "fields": {
+        "name": "Racquetball Doubles",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 75,
+    "fields": {
+        "name": "Softball",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 76,
+    "fields": {
+        "name": "Indoor Soccer",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 77,
+    "fields": {
+        "name": "Badminton Doubles",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 78,
+    "fields": {
+        "name": "Co-Ed Volleyball",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 79,
+    "fields": {
+        "name": "6 ft. and Under Basketball",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 80,
+    "fields": {
+        "name": "Open Soccer",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 81,
+    "fields": {
+        "name": "Women's Basketball",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 82,
+    "fields": {
+        "name": "Open Basketball",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 83,
+    "fields": {
+        "name": "Co-Ed Soccer",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 84,
+    "fields": {
+        "name": "Flag Football",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 85,
+    "fields": {
+        "name": "Indoor Soccer",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 86,
+    "fields": {
+        "name": "Badminton Doubles Tournament",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 87,
+    "fields": {
+        "name": "Racquetball Doubles",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 88,
+    "fields": {
+        "name": "Glow-In-The-Dark Bocce Ball",
+        "active": true,
+        "category": 9
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 89,
+    "fields": {
+        "name": "Pick-up Basketball",
+        "active": true,
+        "category": 10
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 90,
+    "fields": {
+        "name": "Pick-up Soccer",
+        "active": true,
+        "category": 10
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 91,
+    "fields": {
+        "name": "Pick-up Racquetball",
+        "active": true,
+        "category": 10
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 92,
+    "fields": {
+        "name": "Pick-up Volleyball",
+        "active": true,
+        "category": 10
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 93,
+    "fields": {
+        "name": "Running",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 94,
+    "fields": {
+        "name": "Jogging",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 95,
+    "fields": {
+        "name": "Sprinting",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 96,
+    "fields": {
+        "name": "Walking",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 97,
+    "fields": {
+        "name": "Elliptical",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 98,
+    "fields": {
+        "name": "Treadmill",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 99,
+    "fields": {
+        "name": "Stair Mill",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 100,
+    "fields": {
+        "name": "Rowing Machine",
+        "active": true,
+        "category": 11
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 101,
+    "fields": {
+        "name": "Spin Bike",
+        "active": true,
+        "category": 12
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 102,
+    "fields": {
+        "name": "Recumbent Bike",
+        "active": true,
+        "category": 12
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 103,
+    "fields": {
+        "name": "Stationary Bike",
+        "active": true,
+        "category": 12
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 104,
+    "fields": {
+        "name": "Billiards",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 105,
+    "fields": {
+        "name": "Bowling",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 106,
+    "fields": {
+        "name": "Air Hockey",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 107,
+    "fields": {
+        "name": "Foosball",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 108,
+    "fields": {
+        "name": "Shuffleboard",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 109,
+    "fields": {
+        "name": "Sticks Lounge",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 110,
+    "fields": {
+        "name": "Table Tennis",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 111,
+    "fields": {
+        "name": "Board Games",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 112,
+    "fields": {
+        "name": "Giant Jenga",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 113,
+    "fields": {
+        "name": "Giant Connect 4",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 114,
+    "fields": {
+        "name": "USU Pool",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 115,
+    "fields": {
+        "name": "Movies on the House",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 116,
+    "fields": {
+        "name": "Noontime Event",
+        "active": true,
+        "category": 13
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 212,
+    "fields": {
+        "name": "Complete Accountability card with partner",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 213,
+    "fields": {
+        "name": "Take a multi vitamin",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 214,
+    "fields": {
+        "name": "Take a 20-30 min nap",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 215,
+    "fields": {
+        "name": "give someone a gift for no reason",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 216,
+    "fields": {
+        "name": "send someone a letter to say hi",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 217,
+    "fields": {
+        "name": "donate old clothes to goodwill",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 218,
+    "fields": {
+        "name": "go for a hike in nature",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 219,
+    "fields": {
+        "name": "meditate for at least 30 min",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 220,
+    "fields": {
+        "name": "exercise every day for a week",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 221,
+    "fields": {
+        "name": "try a new fruit",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 222,
+    "fields": {
+        "name": "make a fruit smoothie from scratch",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 223,
+    "fields": {
+        "name": "go to a city or state park",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 224,
+    "fields": {
+        "name": "cut out soda for one week from your diet",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 225,
+    "fields": {
+        "name": "eat breakfast everyday for a week",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 226,
+    "fields": {
+        "name": "abandon your phone for 5 hours",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 227,
+    "fields": {
+        "name": "drink 2.5 liters of water for the day",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 228,
+    "fields": {
+        "name": "make a food plan for the week",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 229,
+    "fields": {
+        "name": "write down five self-goals for the week",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 230,
+    "fields": {
+        "name": "do 5 minutes of stretching after you wake up",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 231,
+    "fields": {
+        "name": "get at least 7 hours of sleep",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 232,
+    "fields": {
+        "name": "volunteer somewhere in the community",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 233,
+    "fields": {
+        "name": "attend yoga on the bluffs or at an off campus studio",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 234,
+    "fields": {
+        "name": "apply sunscreen on a sunny day",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 235,
+    "fields": {
+        "name": "challenge yourself to a new hobby",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 236,
+    "fields": {
+        "name": "go to a community farmer's market",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 237,
+    "fields": {
+        "name": "leave a kind note or affirmation for a family member, roommate or friend",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 238,
+    "fields": {
+        "name": "watch a documentary on a topic that interests you",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 239,
+    "fields": {
+        "name": "invite a new friend to lunch",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 240,
+    "fields": {
+        "name": "donate blood",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 241,
+    "fields": {
+        "name": "finish a book",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 242,
+    "fields": {
+        "name": "order water at a restaurant rather than another beverage",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 243,
+    "fields": {
+        "name": "go vegetarian for a day",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 244,
+    "fields": {
+        "name": "go vegan for a day",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 245,
+    "fields": {
+        "name": "try a new exotic cultural cuisine",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 246,
+    "fields": {
+        "name": "try a new healthy recipe",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.activity",
+    "pk": 247,
+    "fields": {
+        "name": "travel to another state",
+        "active": false,
+        "category": 1
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 23,
+    "fields": {
+        "name": "5 Spot Soccer Tournament",
+        "description": "This is a single 5 on 5 single elimination soccer tournament. Be the first team to score 5 goals, or the team with the most goals after 10 minutes to advance to the next round. Register by 9/18.",
+        "active": true,
+        "poster": "events/5-spot-soccer-tournament-poster.jpg",
+        "points": 8,
+        "promote": true,
+        "start": "2017-09-20T00:00:00Z",
+        "end": "2017-09-20T02:00:00Z",
+        "location": "SRWC - Main Court A",
+        "last_modified": "2017-08-14T00:35:04.066Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 27,
+    "fields": {
+        "name": "Backpacking 101",
+        "description": "Ever had the urge to go backpacking but have no idea where to start? Join our staff as they teach you the basics so you can go out and explore on your own!",
+        "active": true,
+        "poster": "events/backpacking-101-poster.jpg",
+        "points": 8,
+        "promote": true,
+        "start": "2017-10-03T17:00:00Z",
+        "end": "2017-10-03T18:00:00Z",
+        "location": "Rock Wall",
+        "last_modified": "2017-09-18T21:28:52.522Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 28,
+    "fields": {
+        "name": "Mission for Nutrition",
+        "description": "Join us at the pool deck for free healthy cooking classes! <br />Learn how to make nutritious meals with minimal ingredients. <br />Get tips on how to save money and time while preparing meals. <br />Cooking outdoors has never been this fun!",
+        "active": true,
+        "poster": "events/mission-for-nutrition-poster.jpg",
+        "points": 8,
+        "promote": true,
+        "start": "2017-10-09T16:00:00Z",
+        "end": "2017-10-09T17:00:00Z",
+        "location": "Aquatics Center",
+        "last_modified": "2017-09-18T21:51:01.280Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 29,
+    "fields": {
+        "name": "Singles Racquetball Tournament",
+        "description": "",
+        "active": true,
+        "poster": "events/singles-racquetball-tournament-poster.jpg",
+        "points": 8,
+        "promote": false,
+        "start": "2017-10-11T18:00:00Z",
+        "end": "2017-10-11T21:00:00Z",
+        "location": "Racquetball Courts",
+        "last_modified": "2017-09-18T22:02:13.020Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 30,
+    "fields": {
+        "name": "Dark Climb",
+        "description": "Gear up and partner up for a challenging new way to rock climb - with no sight at all. Using specialized blackout goggles, you and a team member must coach each other through two routes. Fastest three teams win prizes!",
+        "active": true,
+        "poster": "events/dark-climb-poster.jpg",
+        "points": 8,
+        "promote": true,
+        "start": "2017-11-02T17:00:00Z",
+        "end": "2017-11-02T20:00:00Z",
+        "location": "Rock Wall",
+        "last_modified": "2017-09-18T22:12:30.412Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 31,
+    "fields": {
+        "name": "Rock Climbing Classes",
+        "description": "Want to climb like a pro? Our experienced staff can teach you all the skills you need, from beginning to advanced level lessons available. Stop by the rock wall during open hours to learn more.",
+        "active": true,
+        "poster": "events/rock-climbing-classes-poster.jpg",
+        "points": 8,
+        "promote": false,
+        "start": "2017-11-03T13:00:00Z",
+        "end": "2017-11-03T15:00:00Z",
+        "location": "Rock Wall",
+        "last_modified": "2017-09-18T22:20:49.842Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 32,
+    "fields": {
+        "name": "Art Therapy",
+        "description": "Feeling stressed out? Looking for a way to relax and express yourself? Stop by Beach Balance in November for art therapy! Artistic expression has the power to help us heal, boost our mood and simply relax. Free coloring books and painting supplies will be provided!",
+        "active": true,
+        "poster": "events/art-therapy-poster.jpg",
+        "points": 8,
+        "promote": false,
+        "start": "2017-11-07T10:00:00Z",
+        "end": "2017-11-07T20:00:00Z",
+        "location": "Beach Balance",
+        "last_modified": "2017-09-18T22:26:23.527Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 33,
+    "fields": {
+        "name": "Project Chill",
+        "description": "Kick back and relax or take your study session to one of our hammocks!",
+        "active": true,
+        "poster": "events/project-chill-poster.jpg",
+        "points": 8,
+        "promote": true,
+        "start": "2017-12-13T11:00:00Z",
+        "end": "2017-12-13T14:00:00Z",
+        "location": "USU North Lawn",
+        "last_modified": "2017-09-18T22:31:17.521Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 34,
+    "fields": {
+        "name": "Surf & Turf",
+        "description": "Obstacle course that starts in the water and finishes on the sand.",
+        "active": true,
+        "poster": "events/surf-turf-poster.jpg",
+        "points": 8,
+        "promote": false,
+        "start": "2017-09-29T14:30:00Z",
+        "end": "2017-09-29T16:30:00Z",
+        "location": "Aquatics Center",
+        "last_modified": "2017-09-18T22:38:56.778Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.event",
+    "pk": 35,
+    "fields": {
+        "name": "Scary Trails Obstacle",
+        "description": "Join us in a course that will literally scare you. Participate to win a SRWC prize pack or our grand prize of tickets for Knott's Scary Farm.",
+        "active": true,
+        "poster": "events/scary-trails-obstacle-poster.jpg",
+        "points": 8,
+        "promote": false,
+        "start": "2017-10-25T17:00:00Z",
+        "end": "2017-10-25T19:00:00Z",
+        "location": "Main Court C",
+        "last_modified": "2017-09-20T23:00:54.358Z",
+        "section": 4
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 1,
+    "fields": {
+        "name": "BLM",
+        "description": "Log-in 3 days in a row",
+        "message": "Congrats! You logged in 3 days in a row!",
+        "icon": "badges/blm-login-master.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 2,
+    "fields": {
+        "name": "BSS",
+        "description": "3 Aquatics log-ins",
+        "message": "Congrats! You\u2019ve earned the Swift Swimmer badge!",
+        "icon": "badges/bss-swift-swimmer.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 3,
+    "fields": {
+        "name": "BGR",
+        "description": "5 logs total, must include weight training, and cardio",
+        "message": "Nothing can stop you! Keep up that weight training & cardio!",
+        "icon": "badges/bgr-gym-rat.png",
+        "points": 10
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 4,
+    "fields": {
+        "name": "BRC",
+        "description": "3 logs at rock wall",
+        "message": "Keep up that climbing! You\u2019ve earned the Rock Wall Challenger!",
+        "icon": "badges/brc-rockwall-challenger.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 5,
+    "fields": {
+        "name": "BIA",
+        "description": "3 log-ins at Inclusive",
+        "message": "Way to be inclusive!",
+        "icon": "badges/bia-inclusive-activist.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 6,
+    "fields": {
+        "name": "BOA",
+        "description": "3 log-ins Outdoor",
+        "message": "There are no limits to your adventurousness - keep it up!",
+        "icon": "badges/boa-outdoor-adventurer.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 7,
+    "fields": {
+        "name": "BLC",
+        "description": "2 log-ins League Game",
+        "message": "All you do is win, win, win!",
+        "icon": "badges/blc-league-champ.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 8,
+    "fields": {
+        "name": "BGM",
+        "description": "3 log-ins for Games & Leisure",
+        "message": "Social wellness is an essential part of life. Keep having fun!",
+        "icon": "badges/bgm-game-master.png",
+        "points": 5
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 9,
+    "fields": {
+        "name": "BWW",
+        "description": "3 specific logs: 1 log in Beach Balance, 1 log in Weights, 1 log in Cardio",
+        "message": "Congrats! You\u2019ve successfully combined three difficult feats!",
+        "icon": "badges/bww-wellness-warrior.png",
+        "points": 10
+    }
+},
+{
+    "model": "api_wellness.badge",
+    "pk": 10,
+    "fields": {
+        "name": "BBC",
+        "description": "3 log-ins events related to Beach Pride Events",
+        "message": "Congratulations! You are a true event master!",
+        "icon": "badges/bbc-beachpride-champion.png",
+        "points": 10
+    }
+},
+{
+    "model": "api_wellness.milestone",
+    "pk": 1,
+    "fields": {
+        "name": "M1",
+        "points": 50
+    }
+},
+{
+    "model": "api_wellness.milestone",
+    "pk": 2,
+    "fields": {
+        "name": "M2",
+        "points": 200
+    }
+},
+{
+    "model": "api_wellness.milestone",
+    "pk": 3,
+    "fields": {
+        "name": "M3",
+        "points": 500
+    }
+},
+{
+    "model": "api_wellness.milestone",
+    "pk": 4,
+    "fields": {
+        "name": "M4",
+        "points": 800
+    }
+},
+{
+    "model": "api_wellness.milestone",
+    "pk": 5,
+    "fields": {
+        "name": "M5",
+        "points": 1000
+    }
+}
+]

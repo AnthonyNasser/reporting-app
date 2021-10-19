@@ -1,0 +1,360 @@
+{% extends "reservations/base.html" %}
+
+{% block title %}New Reservation{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+	{{ block.super }} <!-- Extend parent css files -->
+	<link rel="stylesheet" type="text/css" href="{% static 'reservations/css/chosen.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'reservations/css/bootstrap-datetimepicker.min.css' %}" />    
+{% endblock css %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="panel panel-default">	
+				<div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Reservation
+					{% if reservation %}
+						{% if reservation.user.department.name == user.groups.all.0.name or user.is_staff %}
+							{% if reservation.state == reservation.STATE_APPROVED %}
+							<div class="pull-right">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Actions <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-right" role="menu">
+										<li><a id="edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></li>
+									</ul>
+								</div>
+							</div>
+							{% endif %}
+						{% endif %}
+					{% endif %}
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal" action="" method="post">
+						{% csrf_token %}
+						<fieldset>			
+							<div class="form-group">			
+								<label for="user" class="col-sm-1 control-label">Producer</label>
+								<div class="col-sm-5">
+									<select class="form-control select_box" data-placeholder="Name" id="user" name="user">
+										<option value></option>
+										{% for user in user_list %}
+											<option value="{{ user.id }}" data-sid="{{ user.sid }}">{{ user.first_name }} {{ user.last_name }}</option>
+										{% endfor %}
+									</select>
+									{% for error in form.user.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+								</div>
+								<label for="sid" class="col-sm-1 control-label">Campus ID</label>
+								<div class="col-sm-5">
+								<input type="text" class="form-control" id="sid" name="sid" placeholder="Select producer name" readonly>
+								</div>
+							</div>	
+							<div class="form-group">
+								<label for="project" class="col-sm-1 control-label">Project</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control" id="project" name="project" placeholder="Project">
+									{% for error in form.project.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+								</div>
+								<label for="start-date" class="col-sm-1 control-label">Pick Up Date &amp; Time</label>
+								<div class="col-sm-2">			
+								<div class="input-group" id="dp-start-date">
+									<input type="text" class="form-control" id="start-date" name="start-date" placeholder="Pick Up Date and Time" readonly>
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>            
+								</div>
+								{% for error in form.start_date.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+								</div>		
+								<label for="end-date" class="col-sm-1 control-label">Drop Off Date &amp; Time</label>
+								<div class="col-sm-2">			
+								<div class="input-group" id="dp-end-date">
+									<input type="text" class="form-control" id="end-date" name="end-date" placeholder="Drop Off Date and Time" readonly>
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>            
+								</div>
+								{% for error in form.end_date.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+								</div>
+							</div>
+							<div class="form-group">	
+								<label for="items" class="col-sm-1 control-label">Equipment</label>
+								<div class="col-sm-11">
+									<select multiple class="form-control select_box" data-placeholder="Select date range to see available items" id="items" name="items" disabled>
+									</select>
+									{% for error in form.items.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+								</div>
+							</div>	
+							<div class="form-group">
+								<label for="crew" class="col-sm-1 control-label">Projected Crew</label>
+								<div class="col-sm-11">
+									<input type="text" class="form-control" id="crew" name="crew" placeholder="Enter your crew">			
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="comment" class="col-sm-1 control-label">Comments</label>
+								<div class="col-sm-11">
+									<textarea class="form-control" rows="5" id="comment" name="comment" placeholder="e.g. If this is an overnight reservation, please include your supervisor's telephone number to expedite approval."></textarea>
+								</div>
+							</div>
+						</fieldset>
+						{% if reservation %}
+							{% if reservation.user.department.name == user.groups.all.0.name or user.is_staff %}
+								{% if reservation.state == reservation.STATE_APPROVED %}
+								<div class="form-group">
+									<div class="col-sm-offset-1 col-sm-11">
+									<button type="submit" class="btn btn-success" name="save" value="save" id="save" disabled><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Save</button>
+									{% if user.is_staff %}
+									<button type="submit" class="btn btn-primary" name="checkout" value="checkout"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Check Out</button>
+									{% endif %}
+									<button type="submit" class="btn btn-danger pull-right" name="delete" value="delete"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>								  
+									</div>		
+								</div>
+								{% elif reservation.state == reservation.STATE_CHECKOUT and user.is_staff %}
+								<div class="form-group">
+									<div class="col-sm-offset-1 col-sm-11">
+									<button type="submit" class="btn btn-success" name="checkin" value="checkin"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Check In</button>
+									</div>		
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label">Equipment</label>
+									<div class="col-sm-4">
+									<p class="form-control-static">
+										{% for item in reservation.items.all %}
+											{{ forloop.counter }}. {{ item.name }} - {{ item.label }}: <input type="text" class="form-control" placeholder="Comment..." name="{{ item.id }}"><br />
+										{% endfor %}
+									</p>
+									</div>
+								</div>
+								{% elif reservation.state == reservation.STATE_CHECKIN %}
+								<div class="form-group">
+									<div class="col-sm-offset-1 col-sm-11">
+									<p>This reservation has already been checked in.</p>
+									</div>		
+								</div>
+								{% endif %}
+							{% else %}
+								<div class="form-group">
+									<div class="col-sm-offset-1 col-sm-11">
+									<p>You do not have permission to change this reservation.</p>
+									</div>		
+								</div>
+							{% endif %}
+						{% else %}
+						<div class="form-group">
+							<div class="col-sm-offset-1 col-sm-11">
+							<div class="checkbox">
+								<label>
+								<input type="checkbox" id="agree">
+								I agree to take full financial responsibility for all damages made to any piece of equipment signed out in my name that is due to negligence.
+								</label>
+							</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-1 col-sm-11">
+							<button type="submit" class="btn btn-primary" id="reserve" name="reserve" value="reserve" disabled>Reserve</button>
+							</div>
+						</div>
+						{% endif %}			
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="panel panel-default">	
+				<div class="panel-heading">
+					<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Packages
+				</div>
+				<div class="panel-body">
+					<div class="jumbotron">
+						<h2 style="text-align: center;">Coming Soon!</h2>
+						<br /><br /><br />				
+						<button type="button" class="btn btn-primary btn-lg btn-block" disabled="disabled">Import</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block script %}
+	{{ block.super }} <!-- Extend parent script files -->
+	<!-- For multi-select boxes in reservation page -->
+    <script src="{% static 'reservations/js/chosen.jquery.min.js' %}"></script>
+    <!-- For datepicker boxes in reservation page -->
+    <script src="{% static 'reservations/js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script>
+		var selectedEquipment;
+
+		// Enable/disable Reserve button
+		$("#agree").click(function() {
+			$("#reserve").prop("disabled", !this.checked);
+		});
+
+        // Activate chosen select boxes
+        $(".select_box").chosen({
+            width: "100%"
+        });
+
+        // Listen to equipment changes
+        $("#items").chosen().change(function() {
+        	selectedEquipment = $(this).val();
+        });
+
+        $("#edit").click(function() {
+        	$("fieldset").prop("disabled", false);
+        	$("#save").prop("disabled", false);
+        	dpStartDate.data("DateTimePicker").enable();
+	        dpEndDate.data("DateTimePicker").enable();
+	        $(".select_box").prop("disabled", false).trigger('chosen:updated');
+        	$(this).parent().addClass("disabled");
+        });
+
+        var dpStartDate = $("#dp-start-date");
+        var dpEndDate = $("#dp-end-date");
+
+        // Activate datepickers        
+        dpStartDate.datetimepicker({
+        	format: 'L LT', // moment format for date and time
+        	useCurrent: false, // prevent automatic date init
+            ignoreReadonly: true,
+            allowInputToggle: true
+            //enabledHours: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18] // Pick up only from 9am - 6pm (Pending)
+        }).on("dp.change", function(e) {
+            dpEndDate.data("DateTimePicker").minDate(e.date);
+            updateEquipmentList();
+        });
+
+        dpEndDate.datetimepicker({            
+            format: 'L LT', // moment format for date and time
+            useCurrent: false, // prevent automatic date init
+            ignoreReadonly: true,
+            allowInputToggle: true  
+        }).on("dp.change", function(e) {
+            dpStartDate.data("DateTimePicker").maxDate(e.date);
+            updateEquipmentList();
+        });
+
+        // If existing reservation, pre-populate the form
+        {% if reservation %}
+	        $("#user").val("{{ reservation.user_id }}").trigger('chosen:updated');
+	        $("#sid").val("{{ reservation.user.sid }}");
+	        $("#project").val("{{ reservation.project|escape }}");	        
+	        dpStartDate.data("DateTimePicker").date(moment("{{ reservation.start_date|date:'Y/m/d h:i A' }}"));
+	        dpEndDate.data("DateTimePicker").date(moment("{{ reservation.end_date|date:'Y/m/d h:i A' }}"));
+	        selectedEquipment = [{% for item in reservation.items.all %}{{ item.id }},{% endfor %}];	        
+	        $("#items").val(selectedEquipment).trigger('chosen:updated');
+
+	        $("#crew").val("{{ reservation.crew }}");
+	        $("#comment").val("{{ reservation.comment|linebreaksbr }}");
+
+	        // Disable all input fields by default
+	        $("fieldset").prop("disabled", true);
+	        dpStartDate.data("DateTimePicker").disable();
+	        dpEndDate.data("DateTimePicker").disable();
+	        $(".select_box").prop("disabled", true).trigger('chosen:updated');
+
+	    {% else %}
+	    	// If new reservation, set minimum date for datetimepickers
+	    	dpStartDate.data("DateTimePicker").minDate(moment().format("MM/DD/YYYY"));
+	    	dpEndDate.data("DateTimePicker").minDate(moment().format("MM/DD/YYYY"));
+	    {% endif %}
+
+	    // If validation errors, fill the form with previous values
+        {% if form %}	        
+	        $("#user").val("{{ form.user.value }}").trigger('chosen:updated');
+	        $("#sid").val($("#user").children('option:selected').data('sid'));
+	        $("#project").val("{{ form.project.value }}");
+	        dpStartDate.data("DateTimePicker").date(moment("{{ form.start_date.value }}"));
+	        dpEndDate.data("DateTimePicker").date(moment("{{ form.end_date.value }}"));
+	        $("#items").val([{% for item in form.items.value %}"{{ item }}",{% endfor %}]).trigger('chosen:updated');
+	        $("#crew").val("{{ form.crew.value }}");
+	        $("#comment").val("{{ form.comment.value }}");
+	    {% endif %}
+
+	    // If start date given, pre-populate the start date field
+	    {% if date %}
+	    	dpStartDate.data("DateTimePicker").date(moment("{{ date }}"));
+	    {% endif %}        
+
+        // Auto-populates Campus ID when producer's select element is changed
+        $("#user").change(function() {
+            $("#sid").val($(this).children('option:selected').data('sid'));
+        });
+
+        // Formats the date/time when submitting form
+        $("form").submit(function (event) {
+            dpStartDate.data("DateTimePicker").format("YYYY-MM-DD HH:mm:ss");
+            dpEndDate.data("DateTimePicker").format("YYYY-MM-DD HH:mm:ss");
+        });
+
+        function updateEquipmentList() {
+        	var startDate = dpStartDate.data("DateTimePicker").date();
+        	var endDate = dpEndDate.data("DateTimePicker").date();
+
+        	if (startDate && endDate) {
+	        	var itemList = {{ item_list|safe }};
+	        	var reservedItemList = {{ reserved_item_list|safe }};
+	        	var optionsElem = "";	        	
+
+	        	for (var i = 0; i < itemList.length; i++) {	        			        		
+        			var reservedItem = reservedItemList.filter(filterArrayById, itemList[i]);
+        			if (reservedItem.length) {
+        				optionsElem += '<option value="' + itemList[i].id;
+        				conflicts = false;
+        				for (j = 0; j < reservedItem.length; j++) {
+        					if (hasTimeConflict(reservedItem[j].start_date, reservedItem[j].end_date, startDate, endDate)) {	        						
+        						if (!conflicts) {
+        							{% if reservation %}
+        								if (!selectedEquipment) {
+        									selectedEquipment = [{% for item in reservation.items.all %}{{ item.id }},{% endfor %}];
+        								}        								
+        								if (jQuery.inArray(reservedItem[j].items__id, selectedEquipment) > -1) {
+        									optionsElem += '" selected';
+        								} else {
+        									conflicts = true;
+	        								optionsElem += '" disabled>' + itemList[i].name + ' - ' + itemList[i].label + ' (Reserved by:';
+        								}
+        							{% else %}
+        								conflicts = true;
+	        							optionsElem += '" disabled>' + itemList[i].name + ' - ' + itemList[i].label + ' (Reserved by:';
+        							{% endif %}
+        						}
+        						if (conflicts) {
+        							optionsElem += ' ' + reservedItem[j].user__first_name + ' ' + reservedItem[j].user__last_name + ' from '
+	        					 + moment(reservedItem[j].start_date).format('M/D h:mm A') + ' - ' + moment(reservedItem[j].end_date).format('M/D h:mm A');
+	        					}
+        					}
+        				}
+        				conflicts ? optionsElem += ')</option>' : optionsElem += '">' + itemList[i].name + ' - ' + itemList[i].label + '</option>';
+        			} else {
+        				optionsElem += '<option value="' + itemList[i].id + '">' + itemList[i].name + ' - ' + itemList[i].label + '</option>';
+        			}
+	        	}
+
+	        	$("#items").empty().append(optionsElem).prop('disabled', false).val(selectedEquipment).trigger("chosen:updated");        	
+	        }
+        }
+
+        function filterArrayById(e) {
+        	return e.items__id == this.id;
+        }
+
+        function hasTimeConflict(itemStartDate, itemEndDate, chosenStartDate, chosenEndDate) {
+        	var reservedStartDate = moment(itemStartDate);
+        	var reservedEndDate = moment(itemEndDate);
+
+        	if (chosenStartDate.isBetween(reservedStartDate, reservedEndDate, 'second', '[]')
+        		|| chosenEndDate.isBetween(reservedStartDate, reservedEndDate, 'second', '[]')
+        		|| (chosenStartDate.isBefore(reservedStartDate, 'second') && chosenEndDate.isAfter(reservedEndDate, 'second'))) {
+        		return true;
+        	}
+        	return false;
+        }
+    </script>
+{% endblock script %}

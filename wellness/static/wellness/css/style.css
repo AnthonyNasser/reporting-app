@@ -1,0 +1,34 @@
+body { 
+    padding-top: 70px; 
+}
+#dropZone {
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    line-height: 400px;
+    white-space: nowrap;
+    border: 1px dashed #ccc;
+    text-align: center;
+}
+/* #dropZone span {
+    font-weight: 400;
+} */
+.poster {
+    width: 100%;
+}
+#message {
+    font-size: 1.4em;
+    color: red;
+    font-weight: 700;
+}
+#removeButton {
+    color: red;
+    font-size: 3em;
+    position: absolute;
+    right: 0;
+    margin-right: 2rem;
+}
+#dropZoneWrapper small {
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+/* my custom css */
+.mainForm {
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+.selected {
+    background-color: #cccccc;
+}
+
+.package {
+
+}
+
+.item {
+
+}
+
+.styleBox {
+    padding-bottom: 1em;
+}
+
+#tabs {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#test {
+    background-color: black;
+}
+
+#attribute {
+    background-color: #d9d9d9;
+    height: 3em;
+    padding: 0;
+    padding-top: 1em;
+    font-size: 1.5em;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}

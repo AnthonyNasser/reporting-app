@@ -1,0 +1,64 @@
+{% extends "reservations/base.html" %}
+
+{% block title %}
+    Activity Log
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<nav aria-label="Activity logs pages">
+		<ul class="pagination pagination-lg pull-right">
+			{% if logs.has_previous %}
+			<li>			
+				<a href="?page={{ logs.previous_page_number }}" aria-label="Previous page">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			{% endif %}
+			{% for page in logs.paginator.page_range %}
+			{% if page == logs.number %}
+			<li class="active">
+				<span>{{ page }} <span class="sr-only">(current)</span></span>
+			</li>
+			{% else %}
+			<li>
+				<a href="?page={{ page }}">{{ page }}</a>
+			</li>
+			{% endif %}
+			{% endfor %}
+			{% if logs.has_next %}
+			<li>
+				<a href="?page={{ logs.next_page_number }}" aria-label="Next page">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+			{% endif %}
+		</ul>
+	</nav>
+	<div class="row">
+		<div class="col-xs-12 table-responsive">	
+			<table class="table table-hover table-condensed table-striped">
+				<thead>
+					<tr>
+						<th class="col-md-1">#</th>
+						<th class="col-md-2">Timestamp</th>
+						<th class="col-md-9">Message</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% load tz %}
+					{% timezone "America/Los_Angeles" %}
+					{% for log in logs %}
+					<tr>
+						<td>{{ forloop.counter0|add:logs.start_index }}</td>
+						<td>{{ log.timestamp|localtime }}</td>
+						<td>{{ log.message|safe }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+				{% endtimezone %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

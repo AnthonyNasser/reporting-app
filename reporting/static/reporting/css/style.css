@@ -1,0 +1,23 @@
+.dropdown-menu .fa {
+    margin-right: 3px;
+}
+.textarea {
+    white-space: pre-wrap;
+}
+.search-row .bmd-form-group {
+    width: 65%;
+    padding-top: 0.5em !important;
+}
+.search-icon {
+    float: left;
+    padding-top: 1%; 
+    padding-right: 3%
+}
+#myInput {
+    width: 100%; 
+    padding-top: 0em;
+}
+#searchButton {
+    float: right;
+    margin-left: 20px;
+}

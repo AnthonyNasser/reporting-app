@@ -1,0 +1,4332 @@
+[
+{
+  "pk": 1,
+  "fields": {
+    "name": "Camera"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 2,
+  "fields": {
+    "name": "Lenses"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 3,
+  "fields": {
+    "name": "Tripods & Monopods"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 4,
+  "fields": {
+    "name": "Batteries"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 7,
+  "fields": {
+    "name": "Headphones"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 8,
+  "fields": {
+    "name": "Misc"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 9,
+  "fields": {
+    "name": "Sound Equipment"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 11,
+  "fields": {
+    "name": "Lighting Equipment"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 14,
+  "fields": {
+    "name": "Memory SD Cards & Accessories"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 15,
+  "fields": {
+    "name": "Camera Accessories"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 16,
+  "fields": {
+    "name": "Computer Stuff"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 17,
+  "fields": {
+    "name": "Streaming"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 19,
+  "fields": {
+    "name": "Uncategorized"
+  },
+  "model": "reservations.category"
+},
+{
+  "pk": 3,
+  "fields": {
+    "label": "CS01",
+    "name": "Sony NXCAM",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 4,
+  "fields": {
+    "label": "CC01",
+    "name": "Canon T2i",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "Missing Grip",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 5,
+  "fields": {
+    "label": "CC02",
+    "name": "Canon T3i",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "Scratched ",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 6,
+  "fields": {
+    "label": "CC03",
+    "name": "Canon 6D",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 7,
+  "fields": {
+    "label": "CC04",
+    "name": "Canon C100",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 8,
+  "fields": {
+    "label": "CP01",
+    "name": "Panasonic AG AC90",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 9,
+  "fields": {
+    "label": "CP02",
+    "name": "Panasonic DVC30",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 10,
+  "fields": {
+    "label": "CP03",
+    "name": "Panasonic DVX100B",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 11,
+  "fields": {
+    "label": "CP04",
+    "name": "Panasonic DVX100B",
+    "serial": "",
+    "category": 1,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 12,
+  "fields": {
+    "label": "LS01",
+    "name": "Sigma 18-35mm",
+    "serial": "",
+    "category": 2,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 13,
+  "fields": {
+    "label": "LC01",
+    "name": "Canon 24-105mm",
+    "serial": "",
+    "category": 2,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 14,
+  "fields": {
+    "label": "LC02",
+    "name": "Canon17-55mm",
+    "serial": "",
+    "category": 2,
+    "model": "",
+    "misc": "77mm UV Haze",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 15,
+  "fields": {
+    "label": "LC03",
+    "name": "Canon 55-250mm",
+    "serial": "",
+    "category": 2,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 16,
+  "fields": {
+    "label": "LC04",
+    "name": "Canon 18-55mm",
+    "serial": "",
+    "category": 2,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 17,
+  "fields": {
+    "label": "LC05",
+    "name": "Canon 50mm (Prime)",
+    "serial": "",
+    "category": 2,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 18,
+  "fields": {
+    "label": "BC01",
+    "name": "Canon LP-E8",
+    "serial": "201208",
+    "category": 4,
+    "model": "",
+    "misc": "T2i/T31i",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 19,
+  "fields": {
+    "label": "BC02",
+    "name": "Canon LP-E8",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "T2i/T31i",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 20,
+  "fields": {
+    "label": "BC03",
+    "name": "Canon LP-E8",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "T2i/T31i",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 21,
+  "fields": {
+    "label": "BC04",
+    "name": "Canon LP-E8",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "T2i/T31i",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 22,
+  "fields": {
+    "label": "BC05",
+    "name": "Canon LP-E8",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "T2i/T31i",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 23,
+  "fields": {
+    "label": "BC06",
+    "name": "Canon BP955",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 24,
+  "fields": {
+    "label": "BC07",
+    "name": "Canon LP-E6",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 25,
+  "fields": {
+    "label": "BC08",
+    "name": "Canon LP-E6",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 26,
+  "fields": {
+    "label": "BA01",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 27,
+  "fields": {
+    "label": "BA02",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 28,
+  "fields": {
+    "label": "BA03",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 29,
+  "fields": {
+    "label": "BA04",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 30,
+  "fields": {
+    "label": "BA05",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 31,
+  "fields": {
+    "label": "BA06",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 32,
+  "fields": {
+    "label": "BA07",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 33,
+  "fields": {
+    "label": "BA08",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 34,
+  "fields": {
+    "label": "BA09",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 35,
+  "fields": {
+    "label": "BA10",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 36,
+  "fields": {
+    "label": "BA11",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 37,
+  "fields": {
+    "label": "BA12",
+    "name": "Amazon AA",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 38,
+  "fields": {
+    "label": "BP01",
+    "name": "Panasonic Li-ion",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "SMALL",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 39,
+  "fields": {
+    "label": "BP02",
+    "name": "Panasonic Li-ion",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "SMALL",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 40,
+  "fields": {
+    "label": "BP03",
+    "name": "Panasonic Li-ion",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "BIG",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 41,
+  "fields": {
+    "label": "BP04",
+    "name": "Panasonic Li-ion",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "BIG",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 42,
+  "fields": {
+    "label": "BP05",
+    "name": "Panasonic Li-ion",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "BIG",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 43,
+  "fields": {
+    "label": "BS01",
+    "name": "Sony NP-FV70",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 44,
+  "fields": {
+    "label": "BS02",
+    "name": "Sony NP-FV70",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 45,
+  "fields": {
+    "label": "BI01",
+    "name": "Ikan IBS970",
+    "serial": "",
+    "category": 4,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 46,
+  "fields": {
+    "label": "TM01",
+    "name": "Tripod Magnus VT4000",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "Loose part of tripod fell off; still functional ",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 47,
+  "fields": {
+    "label": "TM02",
+    "name": "Tripod Magnus VT4000",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 48,
+  "fields": {
+    "label": "TI01",
+    "name": "Tripod Impact VT2500",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 49,
+  "fields": {
+    "label": "TS01",
+    "name": "Tripod Sunpak 2001UT",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 50,
+  "fields": {
+    "label": "TS02",
+    "name": "Tripod Sunpak Platinum Plus",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 51,
+  "fields": {
+    "label": "TT01",
+    "name": "Tripod Targus TG0666OTR ",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 52,
+  "fields": {
+    "label": "TX01",
+    "name": "Tripod Xit XT80TRPRO",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 53,
+  "fields": {
+    "label": "TA01",
+    "name": "Tripod Art Alternative Basic",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 54,
+  "fields": {
+    "label": "MS03",
+    "name": "Monopod Sunpak Platinum Plus",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 55,
+  "fields": {
+    "label": "MO01",
+    "name": "Monopod Oben ACM-2400",
+    "serial": "",
+    "category": 3,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 56,
+  "fields": {
+    "label": "BB01",
+    "name": "Basic Boom Pole ",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "Not usable, used BU01",
+    "condition": "D"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 57,
+  "fields": {
+    "label": "BK01",
+    "name": "Boom Pole K-Tek S/N 21493",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 58,
+  "fields": {
+    "label": "BU01",
+    "name": "Boom Pole USA",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 59,
+  "fields": {
+    "label": "BR01",
+    "name": "Blimp Rycote Super Shield",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 60,
+  "fields": {
+    "label": "SR01",
+    "name": "Shock Mount Rycote INV-7",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 61,
+  "fields": {
+    "label": "BC09",
+    "name": "CB Bag",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 62,
+  "fields": {
+    "label": "BC10",
+    "name": "CB Bag",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 63,
+  "fields": {
+    "label": "FC01",
+    "name": "CB Mic Flag",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 64,
+  "fields": {
+    "label": "FC02",
+    "name": "CB Mic Flag",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 65,
+  "fields": {
+    "label": "WA01",
+    "name": "Wind Shield Audio-Technica",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 66,
+  "fields": {
+    "label": "WA02",
+    "name": "Wind Shield Audio-Technica",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 67,
+  "fields": {
+    "label": "WA03",
+    "name": "Wind Shield Audio-Technica",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 68,
+  "fields": {
+    "label": "WA04",
+    "name": "Wind Shield Audio-Technica",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 69,
+  "fields": {
+    "label": "SA01",
+    "name": "Shotgun Mic Audio-Technica AT8",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "MISSING",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 70,
+  "fields": {
+    "label": "SA02",
+    "name": "Shotgun Mic Audio-Technica AT8",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 71,
+  "fields": {
+    "label": "SA03",
+    "name": "Shotgun Mic Audio-Technica AT8",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 72,
+  "fields": {
+    "label": "SS01",
+    "name": "Shotgun Mic Sennheiser MKH 416",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 73,
+  "fields": {
+    "label": "LS02",
+    "name": "Lapel Sennheiser EW112-P G3-A",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 74,
+  "fields": {
+    "label": "LS03",
+    "name": "Lapel Sennheiser EW112-P G3-A",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 75,
+  "fields": {
+    "label": "CA01",
+    "name": "Cardiod Mic Audio-Technica ATR",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 76,
+  "fields": {
+    "label": "CA02",
+    "name": "Cardiod Mic Audio-Technica ATR",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 77,
+  "fields": {
+    "label": "CA03",
+    "name": "Cardiod Mic Audio-Technica ATR",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 78,
+  "fields": {
+    "label": "CA04",
+    "name": "Cardiod Mic Audio-Technica ATR",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 79,
+  "fields": {
+    "label": "CS02",
+    "name": "Cardiod Mic Shure Beta 58A",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 80,
+  "fields": {
+    "label": "CA05",
+    "name": "Cardiod Mic AKG D590S",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 81,
+  "fields": {
+    "label": "MS04",
+    "name": "Mixser Sound Devices 633 ",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 82,
+  "fields": {
+    "label": "MF01",
+    "name": "Megaphone Fanon Model MP-3",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 83,
+  "fields": {
+    "label": "RZ01",
+    "name": "Recorder Zoom H4n",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 84,
+  "fields": {
+    "label": "RZ02",
+    "name": "Recorder Zoom H4n",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 85,
+  "fields": {
+    "label": "XM01",
+    "name": "XLR Cable Medium",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 86,
+  "fields": {
+    "label": "XM02",
+    "name": "XLR Cable Medium",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 87,
+  "fields": {
+    "label": "XM03",
+    "name": "XLR Cable Medium",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 88,
+  "fields": {
+    "label": "XM04",
+    "name": "XLR Cable Medium",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 89,
+  "fields": {
+    "label": "XS01",
+    "name": "XLR Cable Small",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 90,
+  "fields": {
+    "label": "XS02",
+    "name": "XLR Cable Small",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 91,
+  "fields": {
+    "label": "XS03",
+    "name": "XLR Cable Small",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 92,
+  "fields": {
+    "label": "XT01",
+    "name": "XLR Cable Tiny",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 93,
+  "fields": {
+    "label": "IL01",
+    "name": "Instrument Cable Long XLR",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 94,
+  "fields": {
+    "label": "XR01",
+    "name": "XLR Cable Right Angle ",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 95,
+  "fields": {
+    "label": "XH01",
+    "name": "XLR Cable Huge",
+    "serial": "",
+    "category": 9,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 96,
+  "fields": {
+    "label": "HS01",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 97,
+  "fields": {
+    "label": "HS02",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 98,
+  "fields": {
+    "label": "HS03",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 99,
+  "fields": {
+    "label": "HS04",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 100,
+  "fields": {
+    "label": "HS05",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 101,
+  "fields": {
+    "label": "HS06",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 102,
+  "fields": {
+    "label": "HS07",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 103,
+  "fields": {
+    "label": "HS08",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 104,
+  "fields": {
+    "label": "HS09",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 105,
+  "fields": {
+    "label": "HS10",
+    "name": "Sony MDRZX100",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 106,
+  "fields": {
+    "label": "HA01",
+    "name": "AKG K44",
+    "serial": "",
+    "category": 7,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 107,
+  "fields": {
+    "label": "RN01",
+    "name": "Reflector Neewer 5IN1",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 108,
+  "fields": {
+    "label": "RN02",
+    "name": "Reflector Neewer 5IN1",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "NO ZIPPER",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 109,
+  "fields": {
+    "label": "RN03",
+    "name": "Reflector Neewer 5IN1",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 110,
+  "fields": {
+    "label": "LP01",
+    "name": "Lightstand Photo Basics",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "SMALL",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 111,
+  "fields": {
+    "label": "LP02",
+    "name": "Lightstand Photo Basics",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 112,
+  "fields": {
+    "label": "LP03",
+    "name": "Lightstand Photo Basics",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "D"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 113,
+  "fields": {
+    "label": "LP04",
+    "name": "Lightstand Photo Basics",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 114,
+  "fields": {
+    "label": "LP05",
+    "name": "Lightstand Photo Basics",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 115,
+  "fields": {
+    "label": "SP01",
+    "name": "Soft Box Photo Basics Light",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "D"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 116,
+  "fields": {
+    "label": "SP02",
+    "name": "Soft Box Photo Basics Light",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "D"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 117,
+  "fields": {
+    "label": "MM01",
+    "name": "Mole Kit Mole Richardson Light",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 118,
+  "fields": {
+    "label": "BS06",
+    "name": "Bulb Sylvania Soft Box",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 119,
+  "fields": {
+    "label": "BS07",
+    "name": "Bulb Sylvania Soft Box",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 120,
+  "fields": {
+    "label": "BS08",
+    "name": "Bulb Sylvania Soft Box",
+    "serial": "",
+    "category": 11,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 121,
+  "fields": {
+    "label": "TP01",
+    "name": "Teleprompter Prompter People",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 122,
+  "fields": {
+    "label": "TN01",
+    "name": "Teleprompter",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 123,
+  "fields": {
+    "label": "GR01",
+    "name": "Greenscreen Ravelli",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 124,
+  "fields": {
+    "label": "GR02",
+    "name": "Greenscreen Ravelli",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 125,
+  "fields": {
+    "label": "GS01",
+    "name": "Greenscreen Steamer",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 126,
+  "fields": {
+    "label": "MZ01",
+    "name": "Misc. Zoom Hand Mount",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 127,
+  "fields": {
+    "label": "MZ02",
+    "name": "Misc. Zoom Hand Mount",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 128,
+  "fields": {
+    "label": "WM01",
+    "name": "Walkie Talkie Midland",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "New w/headphones",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 129,
+  "fields": {
+    "label": "WM02",
+    "name": "Walkie Talkie Midland",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "New w/headphones",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 130,
+  "fields": {
+    "label": "WM03",
+    "name": "Walkie Talkie Midland",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "New w/headphones",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 131,
+  "fields": {
+    "label": "WM04",
+    "name": "Walkie Talkie Midland",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "New w/headphones\r\n",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 132,
+  "fields": {
+    "label": "WM05",
+    "name": "Walkie Talkie Midland",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "New w/headphones\r\n",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 133,
+  "fields": {
+    "label": "WM06",
+    "name": "Walkie Talkie Midland",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "New w/headphones",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 134,
+  "fields": {
+    "label": "MX01",
+    "name": "Male XLR Adapter",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 135,
+  "fields": {
+    "label": "FX01",
+    "name": "Female XLR Adapter",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 136,
+  "fields": {
+    "label": "SN01",
+    "name": "Sandbag",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 137,
+  "fields": {
+    "label": "SN02",
+    "name": "Sandbag",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 138,
+  "fields": {
+    "label": "SN03",
+    "name": "Sandbag",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 139,
+  "fields": {
+    "label": "SN04",
+    "name": "Sandbag",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 140,
+  "fields": {
+    "label": "SN05",
+    "name": "Stinger",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 141,
+  "fields": {
+    "label": "SN06",
+    "name": "Stinger",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 142,
+  "fields": {
+    "label": "SN07",
+    "name": "Stinger",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 143,
+  "fields": {
+    "label": "SN08",
+    "name": "Stinger",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 144,
+  "fields": {
+    "label": "SN09",
+    "name": "Slate",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 145,
+  "fields": {
+    "label": "SN10",
+    "name": "Slate",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 146,
+  "fields": {
+    "label": "SN11",
+    "name": "Slate",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "MISSING",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 147,
+  "fields": {
+    "label": "SN12",
+    "name": "Slate",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 148,
+  "fields": {
+    "label": "PN01",
+    "name": "Powerstrip",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 149,
+  "fields": {
+    "label": "EL01",
+    "name": "Emergency Kit Lift",
+    "serial": "",
+    "category": 8,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 150,
+  "fields": {
+    "label": "MT01",
+    "name": "Transcend 8GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 151,
+  "fields": {
+    "label": "MT02",
+    "name": "Transcend 16GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 152,
+  "fields": {
+    "label": "MT03",
+    "name": "Transcend 16GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 153,
+  "fields": {
+    "label": "MT04",
+    "name": "Transcend 16GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 154,
+  "fields": {
+    "label": "MT05",
+    "name": "Transcend 32GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "MT05 was not working, used MT06 instead",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 155,
+  "fields": {
+    "label": "MT06",
+    "name": "Transcend 32GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 156,
+  "fields": {
+    "label": "MP01",
+    "name": "Panasonic 8GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 157,
+  "fields": {
+    "label": "MS01",
+    "name": "San Disk 16GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 158,
+  "fields": {
+    "label": "MS02",
+    "name": "San Disk 16GB",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 159,
+  "fields": {
+    "label": "MN01",
+    "name": "Memory Card Case",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 160,
+  "fields": {
+    "label": "MN02",
+    "name": "Memory Card Case",
+    "serial": "",
+    "category": 14,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 174,
+  "fields": {
+    "label": "LA01",
+    "name": "Laptop Apple Macbook",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "Restored",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 175,
+  "fields": {
+    "label": "KA01",
+    "name": "Keyboard Apple Wireless",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "Small",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 176,
+  "fields": {
+    "label": "KA02",
+    "name": "Keyboard Apple Wired",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 177,
+  "fields": {
+    "label": "MA01",
+    "name": "Wired Mouse Apple",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 178,
+  "fields": {
+    "label": "MM02*",
+    "name": "Wire Mouse Microsoft",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "Old",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 179,
+  "fields": {
+    "label": "MO02*",
+    "name": "Wired Mouse Omnitech",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "Bedazzled",
+    "condition": "F"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 180,
+  "fields": {
+    "label": "MH01",
+    "name": "Widescreen Monitor HP",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 181,
+  "fields": {
+    "label": "MG01",
+    "name": "Square Monitor Gateway",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 182,
+  "fields": {
+    "label": "DL01",
+    "name": "RW DVD Drive Lacie",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 183,
+  "fields": {
+    "label": "EA01",
+    "name": "Ext. Backup Drives Acom Data 7",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 184,
+  "fields": {
+    "label": "EA02",
+    "name": "Ext. Backup Drives Acom Data 7",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 185,
+  "fields": {
+    "label": "EL02*",
+    "name": "Ext. Backup Drives Lacie 145 G",
+    "serial": "",
+    "category": 16,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 186,
+  "fields": {
+    "label": "IB01",
+    "name": "Intensity Black Magic Shuttle",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 187,
+  "fields": {
+    "label": "HA02*",
+    "name": "HDMI Cable Amazon 25'",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 188,
+  "fields": {
+    "label": "HA03*",
+    "name": "HDMI Cable Amazon 25'",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 189,
+  "fields": {
+    "label": "HB02",
+    "name": "HDMI Cable Belkin Adapter",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 190,
+  "fields": {
+    "label": "HR01",
+    "name": "HDMI Cable Rosewill Short",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 191,
+  "fields": {
+    "label": "HN01",
+    "name": "HDMI Cable Nyrius Short",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 192,
+  "fields": {
+    "label": "EN01",
+    "name": "Ethernet Cable Short",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 193,
+  "fields": {
+    "label": "EN02",
+    "name": "Ethernet Cable Long",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 194,
+  "fields": {
+    "label": "HN02*",
+    "name": "HDMI Nyrius Wireless",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 195,
+  "fields": {
+    "label": "CZ01",
+    "name": "Streaming Cart Zephyr",
+    "serial": "",
+    "category": 17,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 196,
+  "fields": {
+    "label": "AZ01",
+    "name": "Zeikos DSLR View Finder",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 197,
+  "fields": {
+    "label": "AZ02",
+    "name": "Zeikos 52mm Wide Lens Adapter",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 198,
+  "fields": {
+    "label": "AZ03",
+    "name": "Zeikos LED Panel ",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 199,
+  "fields": {
+    "label": "AZ04",
+    "name": "Zeikos Starter Cleaning Kits ",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 200,
+  "fields": {
+    "label": "AZ05",
+    "name": "Zeikos Starter Cleaning  Kits",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 201,
+  "fields": {
+    "label": "AC01",
+    "name": "Canon 52mm Filter",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 202,
+  "fields": {
+    "label": "AC02",
+    "name": "Canon 70mm Filter",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 203,
+  "fields": {
+    "label": "AC03",
+    "name": "CanonLens Cleaner",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 204,
+  "fields": {
+    "label": "AR01",
+    "name": "SSE Telephoto Lens Adapter",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 205,
+  "fields": {
+    "label": "AP02",
+    "name": "Panasonic Camera Strap",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 206,
+  "fields": {
+    "label": "AP03",
+    "name": "Panasonic Shotgun Mount",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 207,
+  "fields": {
+    "label": "AP04",
+    "name": "Panasonic Shotgun Mount",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 208,
+  "fields": {
+    "label": "AP05",
+    "name": "Panasonic Remote",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 209,
+  "fields": {
+    "label": "AK01",
+    "name": "Kodak Lens",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 210,
+  "fields": {
+    "label": "Cleaner",
+    "name": "Cleaner",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 211,
+  "fields": {
+    "label": "AW01",
+    "name": "WD Lens Cleaner",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 212,
+  "fields": {
+    "label": "AL01",
+    "name": "Listec Mini Teleprompter",
+    "serial": "",
+    "category": 15,
+    "model": "",
+    "misc": "",
+    "condition": "G"
+  },
+  "model": "reservations.item"
+},
+{
+  "pk": 1,
+  "fields": {
+    "name": "CBTV",
+    "color": "#3a87ad"
+  },
+  "model": "reservations.department"
+},
+{
+  "pk": 2,
+  "fields": {
+    "name": "ACVP",
+    "color": "#000"
+  },
+  "model": "reservations.department"
+},
+{
+  "pk": 36,
+  "fields": {
+    "sid": "014195075",
+    "last_name": "Victor",
+    "department": 2,
+    "title": "S",
+    "first_name": "Abby",
+    "email": "abbygvictor@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 37,
+  "fields": {
+    "sid": "013814929",
+    "last_name": "Flynn",
+    "department": 2,
+    "title": "S",
+    "first_name": "John",
+    "email": "inlikeflynn95@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 38,
+  "fields": {
+    "sid": "012157637",
+    "last_name": "Najera",
+    "department": 1,
+    "title": "S",
+    "first_name": "Sedonah",
+    "email": "sjnajera17@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 39,
+  "fields": {
+    "sid": "013528552",
+    "last_name": "Ong",
+    "department": 1,
+    "title": "S",
+    "first_name": "Quynh",
+    "email": "ongd.quynh@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 40,
+  "fields": {
+    "sid": "010343513",
+    "last_name": "Farias",
+    "department": 1,
+    "title": "S",
+    "first_name": "Daniel",
+    "email": "defarias44@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 41,
+  "fields": {
+    "sid": "012810913",
+    "last_name": "Lauckner",
+    "department": 1,
+    "title": "S",
+    "first_name": "Jason",
+    "email": "jasonlauckner@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 42,
+  "fields": {
+    "sid": "012489618",
+    "last_name": "Fricke",
+    "department": 1,
+    "title": "S",
+    "first_name": "Michael",
+    "email": "frickemichael26@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 43,
+  "fields": {
+    "sid": "014473015",
+    "last_name": "Gomez",
+    "department": 2,
+    "title": "S",
+    "first_name": "Israel",
+    "email": "israelgmzhdz@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 44,
+  "fields": {
+    "sid": "000000000",
+    "last_name": "Ilagan",
+    "department": 1,
+    "title": "S",
+    "first_name": "Nicole",
+    "email": "nilagan2@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 45,
+  "fields": {
+    "sid": "000000001",
+    "last_name": "Baker",
+    "department": 2,
+    "title": "S",
+    "first_name": "Travis",
+    "email": "travismontgomerybaker@gmail.com",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 46,
+  "fields": {
+    "sid": "00000003",
+    "last_name": "Pourabedi",
+    "department": 2,
+    "title": "S",
+    "first_name": "Maggie",
+    "email": "maggie.pourabedi@csulb.edu",
+    "phone": ""
+  },
+  "model": "reservations.user"
+},
+{
+  "pk": 2,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      61,
+      7,
+      123,
+      124,
+      12,
+      148,
+      107,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      144,
+      46
+    ],
+    "start_date": "2016-09-03T01:00:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-09-03T06:00:00Z",
+    "comment": "We will also be reserving the cart that is separate from the live streaming cart. And also the green screen fabric. These are shared pieces of equipment but are not on the inventory. ",
+    "project": "Smorgasport Tabling Event",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 3,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      7,
+      79,
+      12,
+      83,
+      72,
+      46,
+      85,
+      89
+    ],
+    "start_date": "2016-08-25T00:00:00Z",
+    "crew": "",
+    "user": 41,
+    "end_date": "2016-08-25T04:30:00Z",
+    "comment": "Overnight Reservation. Will return equipment on Thursday, August 24th at 10:00AM\r\n\r\nSupervisor: Nicole Ilagan - Cell: 714.874.5006",
+    "project": "Lemmy Memorial Statue",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 16,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      61,
+      57,
+      75,
+      76,
+      4,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      144,
+      72,
+      48,
+      46,
+      47,
+      122,
+      50,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-10-05T23:30:00Z",
+    "crew": "LNLB Crew",
+    "user": 41,
+    "end_date": "2016-10-06T04:30:00Z",
+    "comment": "This is an overnight reservation\r\nSupervisor: Nicole Ilagan\r\nSupervisor Email: nicole@collegebeattv.org",
+    "project": "Late Night Long Beach Episode 1 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 17,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      23,
+      7,
+      15,
+      12,
+      156,
+      154,
+      83,
+      72,
+      46,
+      47,
+      85
+    ],
+    "start_date": "2016-08-24T18:00:00Z",
+    "crew": "Israel Gomez",
+    "user": 36,
+    "end_date": "2016-08-24T21:00:00Z",
+    "comment": "",
+    "project": "Back To The Beach",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 18,
+  "fields": {
+    "items": [
+      23,
+      7,
+      15,
+      12,
+      154,
+      46
+    ],
+    "start_date": "2016-08-25T18:00:00Z",
+    "crew": "",
+    "user": 36,
+    "end_date": "2016-08-25T21:00:00Z",
+    "comment": "",
+    "project": "Back to Beach Week",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 19,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      23,
+      57,
+      7,
+      8,
+      3,
+      15,
+      12,
+      156,
+      154,
+      83,
+      72,
+      46,
+      85
+    ],
+    "start_date": "2016-08-31T17:00:00Z",
+    "crew": "",
+    "user": 43,
+    "end_date": "2016-08-31T22:00:00Z",
+    "comment": "",
+    "project": "Week of Welcome",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 20,
+  "fields": {
+    "items": [
+      30,
+      31,
+      32,
+      33,
+      24,
+      25,
+      6,
+      8,
+      3,
+      13,
+      156,
+      154,
+      84,
+      47,
+      85
+    ],
+    "start_date": "2016-09-03T01:00:00Z",
+    "crew": "",
+    "user": 43,
+    "end_date": "2016-09-03T06:00:00Z",
+    "comment": "",
+    "project": "Smorgasport",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 26,
+  "fields": {
+    "items": [
+      7,
+      12,
+      46
+    ],
+    "start_date": "2016-09-08T18:30:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-09-09T00:30:00Z",
+    "comment": "",
+    "project": "College Beat TV Auditions",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 27,
+  "fields": {
+    "items": [
+      6,
+      7,
+      13,
+      12,
+      46,
+      47
+    ],
+    "start_date": "2016-09-09T18:30:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-09-10T00:30:00Z",
+    "comment": "",
+    "project": "College Beat TV Auditions ",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 30,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      61,
+      57,
+      75,
+      76,
+      4,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      48,
+      46,
+      47,
+      122,
+      49,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-10-20T00:00:00Z",
+    "crew": "LNLB Crew",
+    "user": 41,
+    "end_date": "2016-10-20T04:00:00Z",
+    "comment": "This is an overnight reservation. Supervisor: Nicole Ilagan Supervisor Email: nicole@collegebeattv.org",
+    "project": "Late Night Long Beach Episode 2 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 31,
+  "fields": {
+    "items": [
+      7,
+      13,
+      12,
+      151,
+      46
+    ],
+    "start_date": "2016-08-31T22:15:00Z",
+    "crew": "",
+    "user": 45,
+    "end_date": "2016-09-01T00:30:00Z",
+    "comment": "",
+    "project": "Beach Buzz 'Senate B-roll'",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 32,
+  "fields": {
+    "items": [
+      23,
+      7,
+      12,
+      155,
+      46
+    ],
+    "start_date": "2016-09-06T20:00:00Z",
+    "crew": "Israel Gomez, John Flynn, Travis Baker",
+    "user": 36,
+    "end_date": "2016-09-06T23:30:00Z",
+    "comment": "",
+    "project": "ASI Comm Video Productions Auditions",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 33,
+  "fields": {
+    "items": [
+      23,
+      7,
+      12,
+      155,
+      46
+    ],
+    "start_date": "2016-09-07T17:00:00Z",
+    "crew": "John Flynn, Israel Gomez",
+    "user": 36,
+    "end_date": "2016-09-07T20:30:00Z",
+    "comment": "",
+    "project": "ASI Comm Video Productions",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 34,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      56,
+      58,
+      6,
+      7,
+      13,
+      15,
+      17,
+      12,
+      83,
+      84,
+      69,
+      70,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      46,
+      47,
+      85,
+      86
+    ],
+    "start_date": "2016-09-16T19:00:00Z",
+    "crew": "",
+    "user": 40,
+    "end_date": "2016-09-17T01:00:00Z",
+    "comment": "",
+    "project": "College Beat TV Boot Camp ",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 35,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      56,
+      7,
+      13,
+      83,
+      69,
+      46,
+      85
+    ],
+    "start_date": "2016-08-26T18:00:00Z",
+    "crew": "",
+    "user": 40,
+    "end_date": "2016-08-26T18:30:00Z",
+    "comment": "",
+    "project": "College Beat TV End Slates",
+    "state": 4
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 36,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      61,
+      57,
+      75,
+      76,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      46,
+      47,
+      122,
+      49,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-10-10T18:00:00Z",
+    "crew": "AWV Crew",
+    "user": 41,
+    "end_date": "2016-10-10T22:30:00Z",
+    "comment": "",
+    "project": "And We Vote Episode 1 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 37,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      56,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      61,
+      75,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      144,
+      72,
+      46,
+      47,
+      122,
+      49,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-10-24T18:00:00Z",
+    "crew": "AWV Crew",
+    "user": 41,
+    "end_date": "2016-10-24T22:30:00Z",
+    "comment": "",
+    "project": "And We Vote Episode 2 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 38,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      61,
+      57,
+      75,
+      76,
+      4,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      70,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      144,
+      72,
+      48,
+      46,
+      47,
+      122,
+      50,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-11-03T00:00:00Z",
+    "crew": "LNLB Crew",
+    "user": 41,
+    "end_date": "2016-11-03T04:30:00Z",
+    "comment": "",
+    "project": "Late Night Long Beach Episode 3 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 39,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      57,
+      75,
+      76,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      144,
+      72,
+      46,
+      47,
+      122,
+      50,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-11-07T19:00:00Z",
+    "crew": "AWV Crew",
+    "user": 41,
+    "end_date": "2016-11-07T23:30:00Z",
+    "comment": "",
+    "project": "And We Vote Episode 3 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 40,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      57,
+      75,
+      76,
+      4,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      72,
+      48,
+      46,
+      47,
+      122,
+      50,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-11-17T01:00:00Z",
+    "crew": "Late Night Long Beach Crew",
+    "user": 41,
+    "end_date": "2016-11-17T05:30:00Z",
+    "comment": "",
+    "project": "Late Night Long Beach Episode 4 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 41,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      61,
+      57,
+      75,
+      76,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      144,
+      72,
+      46,
+      47,
+      122,
+      50,
+      95,
+      85,
+      86
+    ],
+    "start_date": "2016-09-26T18:00:00Z",
+    "crew": "AWV Crew",
+    "user": 41,
+    "end_date": "2016-09-26T22:30:00Z",
+    "comment": "",
+    "project": "And We Vote Episode Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 42,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      61,
+      57,
+      75,
+      4,
+      5,
+      6,
+      7,
+      63,
+      174,
+      13,
+      14,
+      17,
+      110,
+      111,
+      12,
+      73,
+      74,
+      117,
+      81,
+      83,
+      69,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      72,
+      48,
+      46,
+      47,
+      122,
+      50,
+      95,
+      85,
+      86,
+      89
+    ],
+    "start_date": "2016-12-01T01:00:00Z",
+    "crew": "LNLB Crew",
+    "user": 41,
+    "end_date": "2016-12-01T05:30:00Z",
+    "comment": "",
+    "project": "Late Night Long Beach Episode 5 Taping",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 44,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      56,
+      61,
+      7,
+      13,
+      15,
+      12,
+      107,
+      83,
+      69,
+      144,
+      46
+    ],
+    "start_date": "2016-10-14T19:00:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-10-15T00:00:00Z",
+    "comment": "",
+    "project": "Studio 112 Filming",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 45,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      61,
+      7,
+      13,
+      15,
+      12,
+      107,
+      83,
+      69,
+      144,
+      46
+    ],
+    "start_date": "2016-10-21T19:00:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-10-22T00:30:00Z",
+    "comment": "",
+    "project": "Studio 112 Filming",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 46,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      61,
+      7,
+      13,
+      15,
+      12,
+      107,
+      83,
+      69,
+      144,
+      46
+    ],
+    "start_date": "2016-10-28T19:00:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-10-29T00:30:00Z",
+    "comment": "",
+    "project": "Studio 112 Filming",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 47,
+  "fields": {
+    "items": [
+      6,
+      7,
+      13,
+      12
+    ],
+    "start_date": "2016-09-01T17:00:00Z",
+    "crew": "",
+    "user": 36,
+    "end_date": "2016-09-01T22:15:00Z",
+    "comment": "",
+    "project": "Week Of Welcome",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 48,
+  "fields": {
+    "items": [
+      174,
+      136,
+      137,
+      138,
+      139
+    ],
+    "start_date": "2016-09-01T23:15:00Z",
+    "crew": "CBTV Staff",
+    "user": 41,
+    "end_date": "2016-09-02T03:00:00Z",
+    "comment": "Expedited approval from Danny Lemos",
+    "project": "CBTV General Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 50,
+  "fields": {
+    "items": [
+      174
+    ],
+    "start_date": "2016-09-16T01:00:00Z",
+    "crew": "",
+    "user": 44,
+    "end_date": "2016-09-16T03:00:00Z",
+    "comment": "",
+    "project": "CBTV General Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 51,
+  "fields": {
+    "items": [
+      174
+    ],
+    "start_date": "2016-09-23T01:00:00Z",
+    "crew": "",
+    "user": 44,
+    "end_date": "2016-09-23T03:01:00Z",
+    "comment": "",
+    "project": "CBTV General Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 52,
+  "fields": {
+    "items": [
+      174
+    ],
+    "start_date": "2016-09-30T01:00:00Z",
+    "crew": "",
+    "user": 44,
+    "end_date": "2016-09-30T03:01:00Z",
+    "comment": "",
+    "project": "CBTV General Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 53,
+  "fields": {
+    "items": [
+      174
+    ],
+    "start_date": "2016-09-09T01:00:00Z",
+    "crew": "",
+    "user": 44,
+    "end_date": "2016-09-09T03:01:00Z",
+    "comment": "",
+    "project": "CBTV General Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 54,
+  "fields": {
+    "items": [
+      136,
+      137,
+      138
+    ],
+    "start_date": "2016-09-02T01:00:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-09-02T02:01:00Z",
+    "comment": "Danny already approved this.",
+    "project": "College Beat TV Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 55,
+  "fields": {
+    "items": [
+      7,
+      174,
+      12,
+      46,
+      122
+    ],
+    "start_date": "2016-09-13T17:30:00Z",
+    "crew": "LNLB Crew",
+    "user": 41,
+    "end_date": "2016-09-13T21:15:00Z",
+    "comment": "",
+    "project": "Late Night Long Beach Callbacks",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 56,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      61,
+      7,
+      79,
+      63,
+      13,
+      107,
+      69,
+      144,
+      85
+    ],
+    "start_date": "2016-09-17T01:01:00Z",
+    "crew": "",
+    "user": 44,
+    "end_date": "2016-09-19T17:00:00Z",
+    "comment": "Overnight weekend reservation for LB Comic Con approved by Danny Lemos. Will return Monday morning. ",
+    "project": "Long Beach Comic Con",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 57,
+  "fields": {
+    "items": [
+      7,
+      12,
+      46
+    ],
+    "start_date": "2016-09-12T16:00:00Z",
+    "crew": "",
+    "user": 42,
+    "end_date": "2016-09-12T19:00:00Z",
+    "comment": "",
+    "project": "Studio 112",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 58,
+  "fields": {
+    "items": [
+      212,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      18,
+      57,
+      38,
+      59,
+      43,
+      5,
+      8,
+      3,
+      14,
+      15,
+      16,
+      17,
+      73,
+      117,
+      157,
+      158,
+      81,
+      150,
+      151,
+      155,
+      107,
+      83,
+      144,
+      72,
+      122,
+      121,
+      85,
+      89
+    ],
+    "start_date": "2016-09-09T20:00:00Z",
+    "crew": "Israel Gomez, John Flynn, Travis Baker",
+    "user": 36,
+    "end_date": "2016-09-10T01:30:00Z",
+    "comment": "",
+    "project": "ASI Comm Bootcamp",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 59,
+  "fields": {
+    "items": [
+      174
+    ],
+    "start_date": "2016-10-07T01:00:00Z",
+    "crew": "",
+    "user": 44,
+    "end_date": "2016-10-07T03:01:00Z",
+    "comment": "",
+    "project": "CBTV General Meeting",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 60,
+  "fields": {
+    "items": [
+      6,
+      7,
+      13,
+      12,
+      157,
+      158,
+      46,
+      47
+    ],
+    "start_date": "2016-09-15T22:00:00Z",
+    "crew": "",
+    "user": 45,
+    "end_date": "2016-09-15T23:45:00Z",
+    "comment": "Located outside the Library.",
+    "project": "'Beach Buzz' \"Ask an Executive\" B-roll",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 61,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      23,
+      24,
+      25,
+      57,
+      59,
+      6,
+      7,
+      15,
+      12,
+      156,
+      154,
+      155,
+      107,
+      83,
+      144,
+      72,
+      46,
+      47,
+      85,
+      89
+    ],
+    "start_date": "2016-09-13T21:16:00Z",
+    "crew": "",
+    "user": 36,
+    "end_date": "2016-09-14T01:00:00Z",
+    "comment": "",
+    "project": "AS Fit \"Be Fit\" Program",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 62,
+  "fields": {
+    "items": [
+      18,
+      19,
+      57,
+      59,
+      43,
+      44,
+      5,
+      3,
+      14,
+      81,
+      154,
+      155,
+      107,
+      147,
+      72,
+      49,
+      50,
+      87,
+      90
+    ],
+    "start_date": "2016-09-16T20:00:00Z",
+    "crew": "",
+    "user": 36,
+    "end_date": "2016-09-16T23:00:00Z",
+    "comment": "",
+    "project": "AS Fit \"Aqua Zumba\"",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 63,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      23,
+      24,
+      25,
+      57,
+      59,
+      6,
+      7,
+      13,
+      15,
+      12,
+      156,
+      154,
+      155,
+      107,
+      83,
+      144,
+      72,
+      46,
+      47,
+      85,
+      90
+    ],
+    "start_date": "2016-09-19T20:00:00Z",
+    "crew": "",
+    "user": 36,
+    "end_date": "2016-09-19T23:30:00Z",
+    "comment": "",
+    "project": "AS Fit \"150 Dare\"",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+},
+{
+  "pk": 64,
+  "fields": {
+    "items": [
+      26,
+      27,
+      28,
+      29,
+      23,
+      24,
+      25,
+      57,
+      59,
+      6,
+      7,
+      15,
+      12,
+      156,
+      154,
+      155,
+      107,
+      144,
+      72,
+      46,
+      47,
+      85,
+      89
+    ],
+    "start_date": "2016-09-30T07:30:00Z",
+    "crew": "",
+    "user": 36,
+    "end_date": "2016-10-01T00:15:00Z",
+    "comment": "",
+    "project": "AS FIT \"Surf & Turf\"",
+    "state": 2
+  },
+  "model": "reservations.reservation"
+}
+]

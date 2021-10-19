@@ -1,0 +1,256 @@
+{% extends "wellness/base.html" %}
+
+{% block title %}Events{% endblock %}
+{% load staticfiles %}
+
+{% block css %}
+	{{ block.super }} <!-- Extend parent css files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'reservations/css/bootstrap-datetimepicker.min.css' %}" />    
+{% endblock css %}
+
+{% block content %}
+<div class="container-fluid">
+	<form id="eventForm" class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<fieldset>
+			<div class="form-group">
+				<label for="name" class="col-sm-1 control-label">Event Name</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="name" name="name" placeholder="Event Name">
+					{% for error in form.name.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+				</div>
+				<label for="points" class="col-sm-1 control-label" min="1">Points</label>
+				<div class="col-sm-3">
+					<input type="number" class="form-control" id="points" name="points" placeholder="Event Name">
+					{% for error in form.points.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+				</div>
+				<div class="checkbox col-sm-1">
+					<label for="active">
+						<input type="checkbox" id="active" name="active" value="1" checked> <b>Active</b>
+					</label>
+				</div>
+				<div class="checkbox col-sm-1">
+					<label for="promote">
+						<input type="checkbox" id="promote" name="promote" value="1"> <b>Promote</b>
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="location" class="col-sm-1 control-label">Location</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="location" name="location" placeholder="Event Location">
+					{% for error in form.location.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+				</div>
+
+				<label for="start" class="col-sm-1 control-label">Start Date &amp; Time</label>
+				<div class="col-sm-2">			
+				<div class="input-group" id="start">
+					<input type="text" class="form-control" id="start" name="start" placeholder="Start Date and Time" readonly>
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>            
+				</div>
+				{% for error in form.start.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+				</div>
+
+				<label for="end" class="col-sm-1 control-label">End Date &amp; Time</label>
+				<div class="col-sm-2">			
+				<div class="input-group" id="end">
+					<input type="text" class="form-control" id="end" name="end" placeholder="End Date and Time" readonly>
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>            
+				</div>
+				{% for error in form.end.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="description" class="col-sm-1 control-label">Event Description</label>
+				<div class="col-sm-11">
+					<textarea class="form-control" id="description" placeholder="Event Description" rows="3" name="description"></textarea>
+					{% for error in form.description.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="custom-file col-sm-1 control-label" for="poster">Poster Image</label>
+
+				<div class="col-sm-3" id="fileContainer">
+					<div id="dropZoneContainer">
+						<small>Note: For optimal results, ensure images are 1080px by 520px</small>						
+						<input type="file" id="poster" onchange="readFile(this.files)" style="display:none;" accept="image/*" name="poster">
+						<!-- <label id="dropZone" for="poster">Choose a file <span>or drag it here</span>.</label> -->
+						<label id="dropZone" for="poster">Choose a file.</label>
+						<br />
+						<small id="message" style="display: none;">Please upload an image</small>
+						{% for error in form.poster.errors %}<strong class="text-danger">{{ error|escape }}</strong>{% endfor %}
+					</div>
+				</div>
+			</div>
+		</fieldset>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-11">
+			<button type="submit" class="btn btn-primary" id="save" name="save" value="save">Save</button>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}
+{% block script %}
+	{{ block.super }} <!-- Extend parent script files -->
+
+	<!-- For datepicker boxes in reservation page -->
+	<script src="{%static 'wellness/js/bootstrap-datetimepicker.min.js' %}"></script>
+	<script>
+		var fileContainer = document.getElementById("fileContainer");
+		var dropZoneContainer = document.getElementById("dropZoneContainer");
+
+		function readFile(files) {
+			console.log("readFile called...");
+			if (files.length) {
+				var file = files[0];
+				var imageType = /^image\//;
+
+				// Check if MIME type is an image
+				if (!imageType.test(file.type)) {
+					document.getElementById("message").setAttribute("style", "display: block;");
+					return;
+				}
+
+				var img = addImage();
+				img.file = file;
+
+				var reader = new FileReader();
+				reader.onload = function(e) { img.src = e.target.result; }
+				reader.readAsDataURL(file);
+			}
+		}
+
+		function addImage() {
+			// Hide drop zone
+			dropZoneContainer.setAttribute("style", "display: none;");
+
+			// Create thumbnail image element
+			var thumbnail = document.createElement("img");
+			thumbnail.id = "posterImg";			
+			thumbnail.className = "poster";						
+
+			// Create remove button element
+			var removeButton = document.createElement("span");
+			removeButton.id = "removeButton";
+			removeButton.className = "glyphicon glyphicon-remove";
+			removeButton.setAttribute("aria-hidden", "true");
+			removeButton.addEventListener("click", removeImage, false);
+
+			fileContainer.appendChild(removeButton);
+			fileContainer.appendChild(thumbnail);			
+
+			return thumbnail;
+		}
+
+		function removeImage(e) {
+			var posterImg = document.getElementById("posterImg");
+			var removeButton = document.getElementById("removeButton");
+
+			document.getElementById("poster").value = null;
+			fileContainer.removeChild(posterImg);
+			fileContainer.removeChild(removeButton);
+
+			dropZoneContainer.setAttribute("style", "display: block;");						
+		}
+
+		// Remove drag and drop feature until AJAX implementation
+		// var dropBox = document.getElementById("dropZone");
+		// dropBox.addEventListener("dragenter", dragenter, false);
+		// dropBox.addEventListener("dragover", dragover, false);
+		// dropBox.addEventListener("drop", drop, false);
+
+		// function dragenter(e) {
+		// 	e.stopPropagation();
+		// 	e.preventDefault();
+		// }
+
+		// function dragover(e) {
+		// 	e.stopPropagation();
+		// 	e.preventDefault();
+		// }
+
+		// function drop(e) {
+		// 	e.stopPropagation();
+		// 	e.preventDefault();
+
+		// 	var dt = e.dataTransfer;
+		// 	var files = dt.files;
+
+		// 	readFile(files);
+		// }
+
+		var startDate = $('#start');
+		var endDate = $('#end');
+
+		startDate.datetimepicker({
+            format: 'L LT', // moment format for date and time
+            useCurrent: false, // prevent automatic date init
+            ignoreReadonly: true,
+            allowInputToggle: true  
+		});
+		endDate.datetimepicker({
+            format: 'L LT', // moment format for date and time
+            useCurrent: false, // prevent automatic date init
+            ignoreReadonly: true,
+            allowInputToggle: true  
+		});
+
+
+        // Formats the date/time when submitting form
+        $("#eventForm").submit(function(event) {
+            startDate.data("DateTimePicker").format("YYYY-MM-DD HH:mm:ss");
+            endDate.data("DateTimePicker").format("YYYY-MM-DD HH:mm:ss");
+        });
+
+		{% if event %}
+			$('#name').val("{{event.name}}");
+			$('#points').val("{{event.points}}");
+
+			{% if event.active %}
+				$('#active').prop('checked', true);
+			{% else %}
+				$('#active').prop('checked', false);
+			{% endif %}
+
+			{% if event.promote %}
+				$('#promote').prop('checked', true);
+			{% else %}
+				$('#promote').prop('checked', false);
+			{% endif %}
+
+			{% if event.poster %}
+				var img = addImage();
+				img.src = "{{ event.poster.url }}";
+			{% endif %}
+
+			$('#location').val("{{event.location}}");
+			startDate.data("DateTimePicker").date(moment("{{ event.start|date:'Y/m/d h:i A' }}"));
+			endDate.data("DateTimePicker").date(moment("{{ event.end|date:'Y/m/d h:i A' }}"));
+			$('#description').val("{{event.description|linebreaksbr }}");
+		{% else %}
+			startDate.data("DateTimePicker").minDate(moment().format("MM/DD/YYYY"));
+			endDate.data("DateTimePicker").minDate(moment().format("MM/DD/YYYY"));
+		{% endif %}
+
+		// If validation errors, fill the form with previous values
+        {% if form %}	        
+	        $("#name").val("{{form.instance.name}}");
+			$('#points').val("{{form.instance.points}}");
+			{% if form.instance.active %}
+				$('#active').prop('checked', true);
+			{% endif %}
+			{% if form.instance.promote %}
+				$('#promote').prop('checked', true);
+			{% endif %}
+			$('#location').val("{{form.instance.location}}");
+			startDate.data("DateTimePicker").date(moment("{{ form.instance.start|date:'Y/m/d h:i A' }}"));
+			endDate.data("DateTimePicker").date(moment("{{ form.instance.end|date:'Y/m/d h:i A' }}"));
+			$('#description').val("{{form.instance.description|linebreaksbr }}");
+	    {% endif %}
+	</script>
+{% endblock script %}

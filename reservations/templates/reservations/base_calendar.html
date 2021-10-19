@@ -1,0 +1,39 @@
+{% extends "reservations/base.html" %}
+
+{% block title %}Calendar{% endblock %}
+
+{% load staticfiles %}
+
+{% block css %}
+	{{ block.super }} <!-- Extend parent css files -->
+	<link rel="stylesheet" type="text/css" href="{% static 'reservations/css/fullcalendar.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'reservations/css/fullcalendar.print.css' %}" media='print' />   
+{% endblock css %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">					
+			<div class="progress" id="loading">
+				<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%;"></div>
+			</div>
+			<div id='calendar'></div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+	{{ block.super }} <!-- Extend parent script files -->
+	<!-- Calendar script for main page -->
+    <script src="{% static 'reservations/js/fullcalendar.min.js' %}"></script>
+	<script>
+		function getMonthlyReservations() {
+			return "{% url 'reservations:monthly-reservations' %}";
+		}
+		function getClickURL() {
+			return "{% url 'reservations:reserve' %}";
+		}
+	</script>
+    <script src="{% static 'reservations/js/calendar.js' %}"></script>
+{% endblock script %}

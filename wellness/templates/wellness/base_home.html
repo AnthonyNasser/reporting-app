@@ -1,0 +1,49 @@
+{% extends "wellness/base.html" %}
+
+{% block title %}Home{% endblock %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="panel panel-default">
+		<div class="panel-heading"> Event List </div>
+		<div class="panel-body">
+			<div class="row text-center">
+				{% for event in events %}
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+						<a href="{% url 'wellness:events' event.id %}" class="btn btn-default pull-right" aria-label="Edit">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+						</a>
+						<div class="panel-heading">
+							{{ event.name|upper }}
+						</div>
+						<div class="panel-body row">
+							<div class="col-sm-3">
+									<strong>Location</strong><br />{{ event.location }}
+								</div>
+							<div class="col-sm-3">
+								<strong>Start</strong><br />{{ event.start|date:"n/j/y @ P" }}
+							</div>
+							<div class="col-sm-3">
+								<strong>End</strong><br />{{ event.end|date:"n/j/y @ P" }}
+							</div>								
+							<div class="col-sm-3">
+								<img src="{{ event.qr.url }}" width="100%" alt="{{ event.name }} QR Code">
+								<a href="{{ event.qr.url }}" download>Download</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% empty %}
+				<div class="col-sm-12 panel panel-default text-center" style="height: 10vh; display: flex; align-content: center; text-align: center">
+					<h3>No events available.</h3>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+

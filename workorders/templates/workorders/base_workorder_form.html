@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'workorders/css/workorder_form.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'workorders/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'workorders/css/jquery-ui.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'workorders/css/bootstrap-datetimepicker.min.css' %}">
+{% endblock css %}
+
+<title>Workorder Form</title>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-user" aria-hidden="true"> Daniel Son <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-off"></span> Sign out </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<form class="mainForm" id="workorderForm">
+<div class="container-fluid">
+  <div class="row">
+    <div class="form-group">
+        <button class="btn btn-default btn-lg" type="button" data-toggle="collapse" data-target="#previousOrders" aria-expanded="false" aria-controls="togglePreviousOrders">
+        Import Previous Orders
+       </button>
+      
+      <div class="col-lg-12 collapse" id="previousOrders">
+        <ul class="list-group row"> <!-- ajax call to database -->
+          <a href="#"><li class="list-group-item">Title: Project Detail: me</li></a>
+          <a href="#"><li class="list-group-item">Dapibus ac facilisis in</li></a>
+          <a href="#"><li class="list-group-item">Morbi leo risus</li></a>
+          <a href="#"><li class="list-group-item">Porta ac consectetur ac</li></a>
+          <a href="#"><li class="list-group-item">Vestibulum at eros</li></a>
+        </ul>    
+      </div>
+    </div>
+    <!-- Project Title -->
+    <div class="form-group">
+      <div class="col-lg-6">
+        <label for="projectTitle">Project Title</label>
+        <input type="text" class="form-control" id="projectTitle" placeholder="Title">
+      </div>
+
+      <div class='col-lg-6'>
+      <label for="projectTitle">Deadline</label>
+          <div class='input-group date'>
+            <input type='text' class="form-control" id='deadlinePicker'/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+      </div>
+
+      <div class="col-lg-12">
+        <label for="projectDescription">Project Description</label>
+        <textarea class="form-control" id="projectDescription" placeholder="add details..."></textarea>
+      </div>
+
+      <div class="col-lg-6">
+      <label for="budgetCheck"> Budget </label>
+        <div class="row">
+          <div class="col-lg-3">
+          <select id="budgetCheck" class="form-control">
+            <option> </option>
+            <option> ASI Sponsored </option>
+            <option> Funded Event </option>
+          </select>
+          </div>
+          <div class="col-lg-9">
+            <div class="input-group">
+              <span class="input-group-addon">
+              <span class="glyphicon glyphicon-usd"></span>
+              </span>
+              <input type="number" class="form-control" min="0" placeholder="0.00" id="budgetValue">
+            </div>
+          </div>
+        </div>
+         
+      </div>
+      <!-- Availability -->
+      <div class="col-lg-6">
+        <label> Availability </label>
+        <div class="row">
+          <div class="col-lg-2 offset-lg-1">
+            <label>Monday</label>
+            <select class="form-control">
+              <option> </option>
+              <option> Morning </option>
+              <option> Evening </option>
+              <option> Night </option>
+            </select>
+          </div>
+          <div class="col-lg-2">
+            <label>Tuesday</label>
+            <select class="form-control">
+              <option> </option>
+              <option> Morning </option>
+              <option> Evening </option>
+              <option> Night </option>
+            </select>
+          </div>
+          <div class="col-lg-2">
+            <label>Wednesday</label>
+            <select class="form-control">
+              <option> </option>
+              <option> Morning </option>
+              <option> Evening </option>
+              <option> Night </option>
+            </select>
+          </div>
+          <div class="col-lg-2">
+            <label>Thursday</label>
+            <select class="form-control">
+              <option> </option>
+              <option> Morning </option>
+              <option> Evening </option>
+              <option> Night </option>
+            </select>
+          </div>
+          <div class="col-lg-2 offset-lg-1">
+            <label>Friday</label>
+            <select class="form-control">
+              <option> </option>
+              <option> Morning </option>
+              <option> Evening </option>
+              <option> Night </option>
+            </select>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class='col-lg-2'>
+        <label>Is this an event?</label><br/>
+        <div class="btn-group" role="group" aria-label="..." id="eventBoolean">
+          <button type="button" class="btn btn-default" id="yes" value="yes"> Yes </button>
+          <button type="button" class="btn btn-default active" id="no" value="no"> No </button>
+        </div>
+      </div>
+      <div id="startEndDatePicker" style="display: none">
+        <div class='col-lg-5'>
+            <div class="form-group">
+              <label>Start date </label>
+                <div class='input-group date' >
+                    <input type='text' class="form-control" id='startDatePicker'/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='col-lg-5'>
+            <div class="form-group">
+              <label>End date </label>
+                <div class='input-group date' >
+                    <input type='text' class="form-control" id='endDatePicker'/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+    </div>
+
+    <div class="col-lg-12">
+      <div id="packages">
+      </div>
+    </div>
+    <!-- React component -->
+      <div id="appContainer">
+      </div>
+       <!-- end of react component -->
+
+    <div class="col-lg-12">
+      <label for="additionalInfo">Additional Information</label>
+        <textarea class="form-control" id="additionalInfo" placeholder="additional info..."></textarea>
+    </div>
+
+    <div class="col-lg-12">
+      <label>Terms and Agreement</label>
+      <p style="font-size: 12px"> blah blah blah blah blah illegal blah blah blah consequences blah blah blah. blah blah blah blah blah illegal blah blah blah consequences blah blah blah. blah blah blah blah blah illegal blah blah blah consequences blah blah blah. blah blah blah blah blah illegal blah blah blah consequences blah blah blah. blah blah blah blah blah illegal blah blah blah consequences blah blah blah. blah blah blah blah blah illegal blah blah blah consequences blah blah blah. blah blah blah blah blah illegal blah blah blah consequences blah blah blah. </p>
+      <label> I Agree
+    <input type="checkbox" id="agreementBox"> </label>
+
+    </div>
+
+  </div> <!-- end of container-fluid -->
+</div>
+</form>
+
+<button class="btn btn-primary pull-right" id="submitButton" type="submit" form="workorderForm" value="Submit" disabled> Submit </button>
+{% block script %}
+<script src="{% static 'workorders/js/react.min.js' %}"></script>
+<script src="{% static 'workorders/js/react-dom.min.js' %}"></script>
+<script src="{% static 'workorders/js/browser.js' %}"></script>
+
+<script src="{% static 'workorders/js/jquery.min.js' %}"></script>
+<script src="{% static 'workorders/js/moment.js' %}"></script>
+<script src="{% static 'workorders/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+<script src="{% static 'workorders/js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'workorders/js/bootstrap.min.js' %}"></script>
+<script type="text/babel" src="{% static 'workorders/js/workorder_form.js' %}"></script>
+<script>
+
+const category_list = {{category | safe}};
+const product_list = {{product | safe}};
+
+$("#eventBoolean button").click(function(e) {
+  if(e.target.value === "yes") {
+    $("#startEndDatePicker").fadeToggle("slow", "linear");
+    $("#yes").addClass('active');
+    $("#no").removeClass('active');
+  } else {
+    $("#startEndDatePicker").fadeToggle("slow", "linear");
+    $("#no").addClass('active');
+    $("#yes").removeClass('active');
+  }
+});
+
+$("#agreementBox").change(function(e){
+  if(e.target.checked) {
+    $("#submitButton").prop('disabled', false);
+  } else {
+    $("#submitButton").prop('disabled', true);
+  }
+
+});
+
+$("#budgetCheck").change(function(e) {
+  var value = e.target.value;
+  if(value == "ASI Sponsored") {
+    $("#budgetValue").prop('disabled', true);
+  } else if (value == "Funded Event") {
+    $("#budgetValue").prop('disabled', true);
+  } else {
+    $("#budgetValue").prop('disabled', false);
+  }
+});
+
+$(function () {
+    $('#deadlinePicker').datetimepicker();
+});
+
+$(function () {
+  $('#deadlinePicker').datetimepicker({
+    sideBySide: true
+  });
+  $('#startDatePicker').datetimepicker({
+      sideBySide: true
+  });
+  $('#endDatePicker').datetimepicker({
+      useCurrent: false, //Important! See issue #1075
+      sideBySide: true
+  });
+  $("#startDatePicker").on("dp.change", function (e) {
+      $('#endDatePicker').data("DateTimePicker").minDate(e.date);
+  });
+  $("#endDatePicker").on("dp.change", function (e) {
+      $('#startDatePicker').data("DateTimePicker").maxDate(e.date);
+  });
+});
+</script>
+{% endblock script %}
+</body>
+</html>

@@ -1,0 +1,1035 @@
+{% extends "reporting/base.html" %} 
+
+{% block title %}Dashboard{% endblock %} 
+
+{% load staticfiles %} 
+{% block css %} 
+{{ block.super}}
+<!-- Extend parent css files -->
+<link rel="stylesheet" type="text/css" href="{% static 'reporting/css/default.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'reporting/css/default.date.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'reporting/css/default.time.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'reporting/css/jquery-ui.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'reporting/css/jquery-ui.structure.min.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<div class="container-fluid py-5">
+    <div class="row">
+        <!-- Manage Committees -->
+        <div class="col-sm-6 mb-3">
+            <div class="card bg-light">
+                <h4 class="card-header d-flex align-items-center justify-content-end">
+                    <div class="mr-auto">
+                        <i class="fa fa-users" aria-hidden="true"></i> Manage Committees
+                    </div>
+                    <div class="btn-group-sm">
+                        <button type="button" class="btn btn-primary bmd-btn-fab pull-right add-card" data-type="committee">
+                            <i class="fa fa-plus" aria-hidden="true" aria-label="Add Committee"></i>
+                        </button>
+                    </div>
+                </h4>
+                <div class="alert alert-success" role="alert" id="message-save-committee" style="display: none;">
+                    Committee saved.
+                </div>
+                <!-- Manage committee body -->
+                <div class="card-body" style="height: 75vh; overflow: hidden; overflow-y: scroll;">
+                    <div id="accordion-committee" role="tablist">
+                        <div class="card mb-3" id="new-committee-card" style="display: none;">
+                            <div class="card-body">
+                                <form id="committeeForm" class="form-data" data-url="{% url 'reporting:committee-add' %}" data-type="committee">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="committee-name">Name</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="committee-name" name="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="seats-available">Seats Available</label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="seats-available" name="num_of_seats" min="0" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="name-error"></span>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="num_of_seats-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <label for="committee-type">Committee Type</label>
+                                            <select class="form-control" id="committee-type" name="committee_type">
+                                                <option value="ACAD">Academic Senate Committee</option>
+                                                <option value="UNIV">University Committee</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="committee_type-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <label for="contact">Chair Contact</label>
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" id="contact" name="contact" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="contact-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <label for="representatives-mult">Representatives</label>                                            
+                                            <select multiple class="form-control" id="representatives-mult" name="representatives[]">
+                                                {% for rep in representatives %}
+                                                <option value="{{ rep.id }}">{{ rep.full_name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <span class="small">(Hold down "Control", or "Command" on a Mac, to select more than one.)</span>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="representatives[]-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4 pull-right">
+                                        <div class="pr-3">
+                                            <button class="btn btn-default cancel-card" data-type="committee">Cancel</button>
+                                            <button type="submit" value="Submit" class="btn btn-primary btn-raised" id="save-committee">Save</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {% for c in committees %}
+                        <div class="card" id="card-committee{{ c.id }}">
+                            <div class="card-header" role="tab" id="headingCommittee{{ c.id }}">
+                                <div class="row">
+                                    <h5 class="mb-0 col">
+                                        <a id="committeeName" data-toggle="collapse" href="#collapse-committee{{ c.id }}" aria-expanded="true" aria-controls="collapse-committee{{ c.id }}">
+                                            {{ c.name }}
+                                        </a>
+                                    </h5>
+                                    <p id="committeeContact" class="col m-0">{{ c.contact }}</p>
+                                    <button type="button" class="btn btn-primary bmd-btn-icon mr-3" id="dropdowncommittee{{ c.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdowncommittee{{ c.id }}">
+                                        <button class="dropdown-item edit" type="button"
+                                            data-object='{"id": "{{ c.id }}", "name": "{{ c.name }}", "seats": "{{ c.num_of_seats }}",
+                                            "contact": "{{ c.contact }}", "rep_ids": [{% for rep in c.representatives.all %} "{{ rep.id }}"{% if not forloop.last %},{% endif %} {% endfor %}],
+                                            "type": "committee", "committee_type": "{{ c.committee_type }}"}'>
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>
+                                        <button type="button" class="dropdown-item text-danger delete" data-toggle="modal" data-target="#delete"
+                                            data-object='{"id": "{{ c.id }}", "type": "committee", "name": "{{ c.name }}"}'>
+                                            <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Accordion body -->
+                            <div id="collapse-committee{{ c.id }}" class="collapse" role="tabpanel" aria-labelledby="headingCommittee{{ c.id }}" data-parent="#accordion">
+                                <div class="card-body d-flex justify-content-end">
+                                    <div class="mr-auto">
+                                        <h6>Representatives</h6>
+                                        <ul class="list-group">
+                                            {% for rep in c.representatives.all %}
+                                            <li class="list-group-item" data-id="{{ rep.id }}" data-parent="{{ c.id }}">{{ rep.full_name }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Representatives -->
+        <div class="col-sm-6">
+            <div class="card bg-light">
+                <h4 class="card-header d-flex align-items-center justify-content-end">
+                    <div class="mr-auto">
+                        <i class="fa fa-user" aria-hidden="true"></i> Manage Representatives
+                    </div>
+                    <div class="btn-group-sm">
+                        <button type="button" class="btn btn-primary bmd-btn-fab pull-right add-card" data-type="representative">
+                            <i class="fa fa-plus" aria-hidden="true" aria-label="Add Representative"></i>
+                        </button>
+                    </div>
+                </h4>
+                <div class="alert alert-success" role="alert" id="message-save-representative" style="display: none;">
+                    Representative saved.
+                </div>
+                <div class="card-body" style="height: 75vh; overflow: hidden; overflow-y: scroll;">
+                    <div id="accordion-representative" role="tablist">
+                        <div class="card mb-3" id="new-representative-card" style="display: none;">
+                            <div class="card-body">
+                                <form id="representativeForm" class="form-data" data-url="{% url 'reporting:representative-add' %}" data-type="representative">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="firstName">First Name</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="firstName" name="first_name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="lastName">Last Name</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="lastName" name="last_name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="first_name-error"></span>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="last_name-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <label for="email">Email</label>
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" id="email" name="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="email-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <label for="title">Title</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="title" name="title" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="title-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12">
+                                            <label for="email">ASI Board Chair's Email</label>
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" id="chair-email" name="chair_email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="chair_email-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4">
+                                        <div class="col-12 pb-1">
+                                            <label for="committee-select-rep">Committees</label>
+                                            <select multiple class="form-control" id="committee-select-rep" name="committees[]">
+                                                {% for c in committees %}
+                                                <option value="{{ c.id }}">{{ c.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <span class="small">Hold down "Control", or "Command" on a Mac, to select more than one.</span>
+                                        </div>
+                                        <div class="col-12">
+                                            <span id="committees[]-error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-4 pull-right">
+                                        <div class="pr-3">
+                                            <button class="btn btn-default cancel-card" data-type="representative">Cancel</button>
+                                            <button type="submit" value="Submit" class="btn btn-primary btn-raised" id="save-representative">Save</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    
+                        {% for rep in representatives %}
+                        <div class="card" id="card-representative{{ rep.id }}">
+                            <div class="card-header" role="tab" id="headingRepresentative{{ rep.id }}">
+                                <div class="row">
+                                    <h5 class="mb-0 col">
+                                        <a id="representativeFullName" data-toggle="collapse" href="#collapse-representative{{ rep.id }}" aria-expanded="true" aria-controls="collapse-representative{{ rep.id }}">
+                                            {{ rep.full_name }}
+                                        </a>
+                                    </h5>
+                                    <p id="representativeTitle" class="col m-0">{{ rep.title }}</p>
+                                    <button type="button" class="btn btn-primary bmd-btn-icon mr-3" id="dropdownrepresentative{{ rep.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownrepresentative{{ rep.id }}">
+                                        <button class="dropdown-item edit" type="button"
+                                            data-object='{"id": "{{ rep.id }}", "first_name": "{{ rep.first_name }}",
+                                            "last_name": "{{ rep.last_name }}", "email": "{{ rep.email }}", "title": "{{ rep.title }}",
+                                            "com_ids": [{% for c in rep.committees.all %} "{{ c.id }}"{% if not forloop.last %},{% endif %} {% endfor %}],
+                                            "type": "representative", "chair_email": "{{ rep.chair_email }}"}'>
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>
+                                        <button type="button" class="dropdown-item text-danger delete" data-toggle="modal" data-target="#delete"
+                                            data-object='{"id": "{{ rep.id }}", "type": "representative", "name": "{{ rep.full_name }}"}'>
+                                                <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="collapse-representative{{ rep.id }}" class="collapse" role="tabpanel" aria-labelledby="headingRepresentative{{ rep.id }}" data-parent="#accordion">
+                                <div class="card-body d-flex justify-content-end">
+                                    <div class="mr-auto">
+                                        <h6>Committees</h6>
+                                        <ul class="list-group">
+                                            {% for c in rep.committees.all %}
+                                            <li class="list-group-item" data-id="{{ c.id }}" data-parent="{{ rep.id }}">{{ c.name }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of row class -->
+
+    <!-- Manage Meetings -->
+    <div class="row pt-3">
+        <div class="col">
+            <div class="card">
+                <h4 class="card-header d-flex align-items-center justify-content-end">
+                    <div class="mr-auto">
+                        <i class="fa fa-calendar" aria-hidden="true"></i> Manage Meetings</div>
+                    <div class="btn-group-sm">
+                        <button type="button" class="btn btn-primary bmd-btn-fab pull-right add-card" data-type="meeting">
+                            <i class="fa fa-plus" aria-hidden="true" aria-label="Add Meeting"></i>
+                        </button>
+                    </div>
+                </h4>
+                <div class="alert alert-success" role="alert" id="message-save-meeting" style="display: none;">
+                    Meeting saved.
+                </div>
+                <div class="card-body">
+                    <div class="card mb-3" id="new-meeting-card" style="display: none;">
+                        <div class="card-body">
+                            <form id="meetingForm" class="form-data" data-url="{% url 'reporting:meeting-add' %}" data-type="meeting">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="committee-select">Committee</label>
+                                        <select class="form-control" id="committee-select" name="committee" required>
+                                            <option>- Select Committee -</option>
+                                            {% for c in committees %}
+                                                <option value="{{ c.id }}">{{ c.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="meeting-date">Date</label>
+                                        <input type="text" class="form-control datepicker-date" name="date" id="meeting-date" placeholder="Choose Date" readonly />
+                                    </div>
+                                    <div class="col">
+                                        <label for="meeting-start-time">Start Time</label>
+                                        <input type="text" class="form-control datepicker-start" name="start_time" id="meeting-start-time" placeholder="Choose Start Time" readonly />
+                                    </div>
+                                    <div class="col">
+                                        <label for="meeting-end-time">End Time</label>
+                                        <input type="text" class="form-control datepicker-end" name="end_time" id="meeting-end-time" placeholder="Choose End Time" readonly />
+                                    </div>
+                                    <div class="col">
+                                        <label for="meeting-location">Location</label>
+                                        <input type="text" class="form-control" id="meeting-location" name="location" placeholder="Specify Location" required />
+                                    </div>
+                                </div>
+                                <div class="row pt-4 pull-right">
+                                    <div class="pr-3">
+                                        <button class="btn btn-default cancel-card" data-type="meeting">Cancel</button>
+                                        <button type="submit" value="Submit" class="btn btn-primary btn-raised" id="save-meeting">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="meetingList">
+                        {% load tz %}
+                        {% timezone "America/Los_Angeles" %}
+                        {% for m in meetings %}
+                        <div class="card" id="card-meeting{{ m.id }}">
+                            <div class="card-body" id="headingMeeting{{ m.id }}">
+                                <div class="row">
+                                    <h5 id="meetingName" class="mb-0 col">{{ m.committee.name }}</h5>
+                                    
+                                    <p id="meetingTime" class="col m-0">{{ m.start_time|date:"M j, Y" }}, from {{ m.start_time|date:"g:i A" }} to {{ m.end_time|date:"g:i A" }}</p>
+                                    
+                                    <p id="meetingLocation" class="col m-0">{{ m.location }}</p>
+                                    <button type="button" class="btn btn-primary bmd-btn-icon mr-3" id="dropdownmeeting{{ m.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownmeeting{{ m.id }}">
+                                        <button class="dropdown-item edit" type="button"
+                                            data-object='{"id": "{{ m.id }}", "com_id": "{{ m.committee.id }}", "date": "{{ m.start_time|date:"M j, Y" }}",
+                                            "start_time": "{{ m.start_time|date:"g:i A" }}", "end_time": "{{ m.end_time|date:"g:i A" }}",
+                                            "location": "{{ m.location }}", "type": "meeting"}'>
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                        </button>
+                                        <button type="button" class="dropdown-item text-danger delete" data-toggle="modal" data-target="#delete" data-object='{"id": "{{ m.id }}", "type": "meeting", "name": "this meeting"}'>
+                                                <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+                        {% endfor %}
+                        {% endtimezone %}
+                    </div>
+                </div>
+            </div>
+            <!-- Ends here -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Delete -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-prompt">Are you sure you want to delete <span></span>?</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %} 
+{{ block.super }}
+<!-- Extend parent script files -->
+<script src="{% static 'reporting/js/picker.js' %}"></script>
+<script src="{% static 'reporting/js/picker.date.js' %}"></script>
+<script src="{% static 'reporting/js/picker.time.js' %}"></script>
+<script src="{% static 'reporting/js/jquery-ui.min.js' %}"></script>
+<script>
+    (function($) {
+        // Configure date/time pickers
+        var datePicker = $('.datepicker-date').pickadate({
+            format: 'mmm d, yyyy',
+            formatSubmit: 'yyyy-mm-dd',
+            hiddenName: true
+        });
+        var startTimePicker = $('.datepicker-start').pickatime({
+            format: 'h:i A',
+            formatSubmit: 'HH:i',
+            hiddenName: true,
+            min: [7,0],
+            max: [19,0]
+        });
+        var endTimePicker = $('.datepicker-end').pickatime({
+            format: 'h:i A',
+            formatSubmit: 'HH:i',
+            hiddenName: true,
+            min: [7,0],
+            max: [19,0]
+        });
+
+        function resetForm(type) {
+            if (type === 'representative') {
+                $('#representativeForm').data('url', "{% url 'reporting:representative-add' %}");
+                $('#firstName, #lastName, #email, #title, #chair-email').val('');
+                $('#committee-select-rep option:selected').prop('selected', false);
+            } else if (type === 'committee') {
+                $('#committeeForm').data('url', "{% url 'reporting:committee-add' %}");
+                $('#committee-name, #seats-available, #contact').val('');
+                $('#representatives-mult option:selected, #committee-type option:selected').prop('selected', false);
+            } else if (type === 'meeting') {
+                $('#meetingForm').data('url', "{% url 'reporting:meeting-add' %}");
+                $('#committee-select option:selected').prop('selected', false);
+                $('#meeting-date, #meeting-start-time, #meeting-end-time, #meeting-location').val('');
+            }
+        }
+
+        function showForm(type) {
+            var card = $('#new-' + type + '-card');
+
+            // Shake if card is visible
+            if (card.is(":visible")) {
+                card.effect("shake");
+            } else {
+                card.slideDown();
+            }
+        }
+
+        // Show form
+        $('.add-card').on('click', function(e) {
+            showForm($(this).data('type'));
+            return false;
+        });
+
+        // Cancel form
+        $('.cancel-card').on('click', function(e) {
+            $('#new-' + $(this).data('type') + '-card').slideUp();
+            resetForm($(this).data('type'));
+            return false;
+        });
+
+        // Edit
+        $('.card').on('click', 'button.edit', function(e) {
+            var data = $(this).data('object');            
+
+            // Update form's data-url attribute
+            var form = $('#' + data.type + 'Form');
+            form.data('url', data.type + '/' + data.id + '/');
+
+            if (data.type === 'committee') {
+                // Populate form fields
+                $('#committee-name').val(data.name);
+                $('#seats-available').val(data.seats);
+                $('#contact').val(data.contact);
+                $('#committee-type').val(data.committee_type);
+                $('#representatives-mult').val(data.rep_ids);
+            } else if (data.type === 'representative') {
+                // Populate form fields
+                $('#firstName').val(data.first_name);
+                $('#lastName').val(data.last_name);
+                $('#email').val(data.email);
+                $('#title').val(data.title);
+                $('#chair-email').val(data.chair_email);
+                $('#committee-select-rep').val(data.com_ids);
+            } else if (data.type === 'meeting') {
+                // Populate form fields
+                $('#committee-select').val(data.com_id);
+                datePicker.pickadate('picker').set('select', data.date);
+                startTimePicker.pickatime('picker').set('select', data.start_time);
+                endTimePicker.pickatime('picker').set('select', data.end_time);
+                $('#meeting-location').val(data.location);
+            }
+
+            // Toggle dropdown
+            $('#dropdown' + data.type + data.id).dropdown('toggle');
+
+            //var parent = $(this).parents('#card-' + data.type + data.id).detach();
+
+            // Show form
+            showForm(data.type);
+            return false;
+        });
+
+        // Delete confirmation modal
+        $('#delete').on('show.bs.modal', function(e) {
+            var data = $(e.relatedTarget).data('object');
+            // Customize modal prompt
+            $('.modal-prompt span').text(data.name);
+            // Add respective data to delete button in modal
+            $('#confirm-delete').data('object', {id: data.id, type: data.type});
+        });
+
+        // POST to delete
+        $('#confirm-delete').on('click', function(e) {
+            var data = $(this).data('object');
+            $.post(data.type + '/' + data.id + '/delete/', {csrfmiddlewaretoken: "{{ csrf_token }}"}).done(function(res) {
+                if (data.type === 'committee') { // When deleting a committee
+                    // Remove from representative and meeting form
+                    $('#committee-select-rep option[value="' + data.id + '"], #committee-select option[value="' + data.id + '"]').remove();
+                    // Remove from all representative cards and respective edit buttons
+                    var repCards = $('[id^=card-representative]');
+                    // Remove committee from representative's committee list
+                    repCards.find('ul > li[data-id~=' + data.id + ']').remove();
+                    // Remove committee's id from representative's edit button com_ids array
+                    repCards.find('.edit').each(function(i, el) {
+                        var editData = $(el).data('object');
+                        var index = editData.com_ids.indexOf(data.id);
+                        if (index > -1) { // If found
+                            editData.com_ids.splice(index, 1);
+                            $(this).data('object', editData);
+                        }                        
+                    });
+                } else if (data.type === 'representative') { // When deleting a representative
+                    // Remove from Committee form
+                    $('#representatives-mult option[value="' + data.id + '"]').remove();
+
+                    // Remove from all committee cards and respective edit buttons
+                    var comCards = $('[id^=card-committee]');
+                    // Remove representative from committee's representative list
+                    comCards.find('ul > li[data-id~=' + data.id + ']').remove();
+                    // Remove representative's id from committees's edit button rep_ids array
+                    comCards.find('.edit').each(function(i, el) {
+                        var editData = $(el).data('object');
+                        var index = editData.rep_ids.indexOf(data.id);
+                        if (index > -1) { // If found
+                            editData.rep_ids.splice(index, 1);
+                            $(this).data('object', editData);
+                        }
+                    });
+                }
+                
+                // Delete row
+                $('#card-' + data.type + data.id).remove();
+                // Hide modal
+                $('#delete').modal('hide');
+            }).fail(function(res, textStatus, errThrown) {
+                // TODO: Display error to user
+            });
+        });
+
+        // Submit form
+        $('.form-data').submit(function(e) {
+            var data = $(this).serializeArray();
+            var type = $(this).data('type');
+
+            // Format meeting date/time
+            if (type === 'meeting') {
+                var date, start_time, end_time;
+
+                for (var el of data) {
+                    if (el.name === 'date') {
+                        date = el.value;
+                    } else if (el.name === 'start_time') {
+                        start_time = el.value;
+                    } else if (el.name === 'end_time') {
+                        end_time = el.value;
+                    }
+                }
+
+                var start = date + ' ' + start_time;
+                var end = date + ' ' + end_time;
+
+                // Format to UTC format
+                data.forEach(function(el) {
+                    if (el.name === 'start_time') {
+                        el.value = moment(start).utc().format('YYYY-MM-DD HH:mm');
+                    } else if (el.name === 'end_time') {
+                        el.value = moment(end).utc().format('YYYY-MM-DD HH:mm');
+                    }
+                });
+            }
+
+            // Send data to server
+            $.post($(this).data('url'), data).done(function(res) {
+                // Convert data array to an object, with repeated keys as property value array (e.g., multiple selects)
+                var relatedKeys = [];
+                var formData = data.reduce(function(prev, cur) {            
+                    var key = cur.name;            
+                    if (key === 'representatives[]' || key === 'committees[]') {
+                        key = key.slice(0, -2); // Remove the brackets '[]'
+                        relatedKeys.push(cur.value);
+                        prev[key] = relatedKeys;
+                    } else {
+                        prev[key] = cur.value;
+                    }
+                    return prev;
+                }, {});
+
+                // Get id & names from selects
+                var selects = [];
+                if (type === 'committee') {            
+                    $('#representatives-mult :selected').each(function(idx, el) {
+                        selects.push({id: el.value, text: $(this).text()});
+                    });
+                } else if (type === 'representative') {
+                    $('#committee-select-rep :selected').each(function(idx, el) {
+                        selects.push({id: el.value, text: $(this).text()});
+                    });
+                } else if (type === 'meeting') {
+                    formData['name'] = $('#committee-select :selected').text();
+                }
+                formData['selects'] = selects;
+
+                if (res.updated) {
+                    // Update existing card
+                    updateCard(res.pk, type, formData);
+                } else {
+                    // Add new card
+                    createCard(res.pk, type, formData);
+
+                    var editButton;
+                    var editData;
+
+                    // Update related fields
+                    if (type === 'committee') {
+                        // Add to representative and meeting form
+                        $('#committee-select-rep, #committee-select').append("<option value='" + res.pk + "'>" + formData.name + "</option>");
+                        // Append newly created committee to respective representatives
+                        if (formData.representatives) {
+                            for (var rep of formData.representatives) {
+                                $('#collapse-representative' + rep + ' ul').append("<li class='list-group-item' data-id='" + res.pk + "' data-parent='" + rep + "'>" + formData.name + "</li>");
+                                // Set com_ids for each representative card's edit menu
+                                editButton = $('#card-representative' + rep + ' .edit');
+                                editData = editButton.data('object');
+                                editData.com_ids.push(res.pk.toString());
+                                editButton.data(editData);
+                            }
+                        }
+                    } else if (type === 'representative') {
+                        // Add to Committee form
+                        $('#representatives-mult').append("<option value='" + res.pk + "'>" + formData.first_name + ' ' + formData.last_name + "</option>");
+                        // Append newly created representative to respective committees
+                        if (formData.committees) {
+                            for (var com of formData.committees) {
+                                $('#collapse-committee' + com + ' ul').append("<li class='list-group-item' data-id='" + res.pk + "' data-parent='" + com + "'>" + formData.first_name + ' ' + formData.last_name + "</li>");
+                                // Set rep_ids for each committees card's edit menu
+                                editButton = $('#card-committee' + com + ' .edit');
+                                editData = editButton.data('object');
+                                editData.rep_ids.push(res.pk.toString());
+                                editButton.data(editData);
+                            }
+                        }
+                    }
+                }
+
+                // Hide and reset the form
+                $('#new-' + type + '-card').hide();
+                resetForm(type);
+
+                // Display message
+                $('#message-save-' + type).slideDown("slow", function() {
+                    $(this).delay(3000).slideUp();
+                });
+            }).fail(function(res, textStatus, errThrown) {
+                if (res) {
+                    Object.keys(res.responseJSON).forEach(function(key) {
+                        var errObj = res.responseJSON;
+                        var errorEl = $("#" + key + "-error");
+                        errorEl.text(errObj[key]);
+                        errorEl.css('color', 'red');
+                    });
+                }                
+            });
+
+            return false;
+        });
+
+        function updateCard(id, type, data) {
+            var card = $('#card-' + type + id);
+
+            if (type === 'committee') {
+                card.find('#committeeName').text(data.name);
+                card.find('#committeeContact').text(data.contact);
+
+                // Update delete button data-object
+                var deleteBtn = card.find('button.delete');
+                var deleteData = deleteBtn.data('object');
+                deleteData.name = data.name;
+                deleteBtn.data('object', deleteData);
+
+                // Update edit button data-object
+                var editBtn = card.find('button.edit');
+                var editData = editBtn.data('object');
+                editData.name = data.name;
+                editData.seats = data.num_of_seats;
+                editData.contact = data.contact;
+                editData.rep_ids = data.representatives || [];
+                editBtn.data('object', editData);
+
+                // Update representative list
+                var repList = card.find('#collapse-' + type + id + ' ul');
+                repList.empty();
+                data.selects.forEach(function(cv) {
+                    repList.append("<li class='list-group-item' data-id='" + cv.id + "' data-parent='" + id + "'>" + cv.text + "</li>");
+                });
+
+                // Update on representative and meeting forms
+                $('#committee-select-rep option[value="' + id + '"], #committee-select option[value="' + id + '"]').text(data.name);
+
+                // Update/remove committee name on representative cards who already have this committee               
+                var repCards = $('[id^=card-representative] ul > li[data-id="' + id + '"]');
+                var remainingReps = data.representatives ? data.representatives.slice() : [];
+                repCards.each(function(i, el) {
+                    var rep_id = $(el).data('parent').toString();
+                    if (remainingReps.length && remainingReps.includes(rep_id)) {
+                        $(el).text(data.name);
+                        remainingReps.splice(remainingReps.indexOf(rep_id), 1);
+                    } else {
+                        $(el).remove();
+                    }
+                });
+
+                // Append committee name to representative cards who were newly added to this committee
+                if (remainingReps.length) {
+                    for (var rep of remainingReps) {
+                        var cardRep = $('#card-representative' + rep);
+                        cardRep.find('ul').append("<li class='list-group-item' data-id='" + id + "' data-parent='" + rep + "'>" + data.name + "</li>");
+                        // Set com_ids for each representative card's edit menu
+                        editButton = cardRep.find('button.edit');
+                        editData = editButton.data('object');
+                        editData.com_ids.push(id.toString());
+                        editButton.data(editData);
+                    }
+                }
+            } else if (type === 'representative') {
+                var fullName = data.first_name + ' ' + data.last_name;
+                card.find('#representativeFullName').text(fullName);
+                card.find('#representativeTitle').text(data.title);
+
+                // Update delete button data-object
+                var deleteBtn = card.find('button.delete');
+                var deleteData = deleteBtn.data('object');
+                deleteData.name = fullName;
+                deleteBtn.data('object', deleteData);
+
+                // Update edit button data-object
+                var editBtn = card.find('button.edit');
+                var editData = editBtn.data('object');
+                editData.first_name = data.first_name;
+                editData.last_name = data.last_name;
+                editData.email = data.email;
+                editData.title = data.title;
+                editData.com_ids = data.committees || [];
+                editBtn.data('object', editData);
+
+                // Update representative list
+                var comList = card.find('#collapse-' + type + id + ' ul');
+                comList.empty();
+                data.selects.forEach(function(cv) {
+                    comList.append("<li class='list-group-item' data-id='" + cv.id + "' data-parent='" + id + "'>" + cv.text + "</li>");
+                });
+
+                // Update on committee form
+                $('#representatives-mult option[value="' + id + '"]').text(fullName);
+
+                // Update/remove representative name on committee cards who already have this representative               
+                var comCards = $('[id^=card-committee] ul > li[data-id="' + id + '"]');
+                var remainingComs = data.committees ? data.committees.slice() : [];
+                comCards.each(function(i, el) {
+                    var com_id = $(el).data('parent').toString();
+                    if (remainingComs.length && remainingComs.includes(com_id)) {
+                        $(el).text(fullName);
+                        remainingComs.splice(remainingComs.indexOf(com_id), 1);
+                    } else {
+                        $(el).remove();
+                    }
+                });
+
+                // Append representative name to committee cards who were newly added to this representative
+                if (remainingComs.length) {
+                    for (var com of remainingComs) {
+                        var cardCom = $('#card-committee' + com);
+                        cardCom.find('ul').append("<li class='list-group-item' data-id='" + id + "' data-parent='" + com + "'>" + fullName + "</li>");
+                        // Set rep_ids for each committee card's edit menu
+                        editButton = cardCom.find('button.edit');
+                        editData = editButton.data('object');
+                        editData.rep_ids.push(id.toString());
+                        editButton.data(editData);
+                    }
+                }
+            } else if (type === 'meeting') {
+                var date = moment.utc(data.start_time).local().format('MMM D, YYYY');
+                var start_time = moment.utc(data.start_time).local().format('h:mm A');
+                var end_time = moment.utc(data.end_time).local().format('h:mm A');
+
+                card.find('#meetingName').text(data.name);
+                card.find('#meetingTime').text(date + ', from ' + start_time + ' to ' + end_time);
+                card.find('#meetingLocation').text(data.location);
+
+                // Update edit button data-object
+                var editBtn = card.find('button.edit');
+                var editData = editBtn.data('object');
+                editData.com_id = data.committee;
+                editData.date = date;
+                editData.start_time = start_time;
+                editData.end_time = end_time;
+                editData.location = data.location;
+                editBtn.data('object', editData);
+            }
+        }
+
+        // Add Dynamic fields
+        function createCard(id, type, data) {
+            if (type === 'meeting') {
+                var card = document.createElement('div');
+                card.className = 'card';
+                card.id = "card-" + type + id;
+
+                var cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+                cardBody.id = 'headingMeeting' + id;
+
+                var row = document.createElement('div');
+                row.className = 'row';
+
+                var meetingName = document.createElement('h5');
+                meetingName.id = 'meetingName';
+                meetingName.className = 'mb-0 col';
+                meetingName.appendChild(document.createTextNode(data.name));
+
+                var meetingDate = document.createElement('p');
+                meetingDate.id = 'meetingDate';
+                meetingDate.className = 'col m-0';
+                meetingDate.appendChild(document.createTextNode(
+                    moment.utc(data.start_time).local().format('MMM DD, YYYY, [from] h:mm A') + ' ' +
+                    moment.utc(data.end_time).local().format('[to] h:mm A')
+                ));
+                var meetingLocation = document.createElement('p');
+                meetingLocation.id = 'meetingLocation';
+                meetingLocation.className = 'col m-0';
+                meetingLocation.appendChild(document.createTextNode(data.location));
+
+                row.appendChild(meetingName);
+                row.appendChild(meetingDate);
+                row.appendChild(meetingLocation);
+                row.appendChild(createActionButton(id, type));
+                row.appendChild(createActionMenu(id, type, data));
+                card.appendChild(cardBody).appendChild(row);
+
+                $('#meetingList').append(card);
+            } else {
+                var card = document.createElement('div');
+                card.className = "card";
+                card.id = "card-" + type + id;
+
+                var cardHeader = document.createElement('div');
+                cardHeader.className = "card-header";
+                cardHeader.id = "heading" + type + id;
+                cardHeader.setAttribute('role', 'tab');
+                card.appendChild(cardHeader);
+
+                var row = document.createElement('div');
+                row.className = 'row';
+                cardHeader.appendChild(row);
+
+                var rowLink = document.createElement('h5');
+                rowLink.className = 'mb-0 col';
+                row.appendChild(rowLink);
+
+                var titleLink = document.createElement('a');
+                titleLink.setAttribute('href', ('#collapse-' + type + id));
+                titleLink.setAttribute('data-toggle', 'collapse');
+                titleLink.setAttribute('aria-expanded', 'false');
+                titleLink.setAttribute('aria-controls', 'collapse-' + type + id);
+
+                var secondaryTitleText = document.createElement('p');
+                secondaryTitleText.className = 'col m-0';
+
+                if (type === 'committee') {
+                    titleLink.appendChild(document.createTextNode(data.name));
+                    secondaryTitleText.appendChild(document.createTextNode(data.contact));
+                } else if (type === 'representative') {
+                    titleLink.appendChild(document.createTextNode(data.first_name + ' ' + data.last_name));
+                    secondaryTitleText.appendChild(document.createTextNode(data.title));
+                }
+                rowLink.appendChild(titleLink);
+                row.appendChild(secondaryTitleText);
+
+                row.appendChild(createActionButton(id, type));
+                row.appendChild(createActionMenu(id, type, data));
+
+                var accordionBody = document.createElement('div');
+                accordionBody.className = 'collapse';
+                accordionBody.id = 'collapse-' + type + id;
+                accordionBody.setAttribute('role', 'tabpanel');
+                accordionBody.setAttribute('aria-labelledby', 'heading' + id);
+                accordionBody.setAttribute('data-parent', '#accordion');
+                cardHeader.appendChild(accordionBody);
+
+                var cardBody = document.createElement('div');
+                cardBody.className = 'card-body d-flex justify-content-end';
+                accordionBody.appendChild(cardBody);
+
+                var content = document.createElement('div');
+                content.className = 'mr-auto';
+                cardBody.appendChild(content);
+
+                var altType = '';
+                if (type === 'committee') {
+                    altType = 'Representatives';
+                } else if (type === 'representative') {
+                    altType = 'Committees';
+                }
+
+                var contentHeader = document.createElement('h6');
+                contentHeader.appendChild(document.createTextNode(altType));
+                content.appendChild(contentHeader);
+
+                var contentList = document.createElement('ul');
+                contentList.className = 'list-group';
+
+                data.selects.forEach(function(cv) {
+                    var contentListItem = document.createElement('li');
+                    contentListItem.className = 'list-group-item';
+                    contentListItem.setAttribute('data-id', cv.id);
+                    contentListItem.setAttribute('data-parent', id);
+                    contentListItem.appendChild(document.createTextNode(cv.text));
+                    contentList.appendChild(contentListItem);
+                });
+
+                content.appendChild(contentList);
+
+                $('#accordion-' + type).append(card);
+            }
+        }
+
+        function createActionButton(id, type) {
+            var button = document.createElement('button');
+            button.className = 'btn btn-primary bmd-btn-icon mr-3';
+            button.id = 'dropdown' + type + id;
+            button.setAttribute('type', 'button');
+            button.setAttribute('data-toggle', 'dropdown');
+            button.setAttribute('aria-haspopup', 'true');
+            button.setAttribute('aria-expanded', 'false');
+            button.innerHTML = '<i class="material-icons">more_vert</i>';
+            return button;
+        }
+
+        function createActionMenu(id, type, data) {
+            var menu = document.createElement('div');
+            menu.className = 'dropdown-menu dropdown-menu-right';
+            menu.setAttribute('aria-labelledby', 'dropdown' + type + id);
+
+            var editButton = document.createElement('button');
+            editButton.className = 'dropdown-item edit';
+            editButton.setAttribute('type', 'button');
+            editButton.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
+            editButton.appendChild(document.createTextNode('Edit'));
+
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'dropdown-item text-danger delete';
+            deleteButton.setAttribute('type', 'button');
+            deleteButton.setAttribute('data-toggle', 'modal');
+            deleteButton.setAttribute('data-target', '#delete');
+            deleteButton.innerHTML = '<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>';
+            deleteButton.appendChild(document.createTextNode('Delete'));
+
+            if (type === 'representative') {
+                editButton.setAttribute('data-object', '{"id":"' + id + '", "type":"' + type + '", "first_name":"' + data.first_name
+                    + '", "last_name":"' + data.last_name + '", "email":"' + data.email + '", "title":"' + data.title
+                    + '", "chair_email":"' + data.chair_email + '", "com_ids":[' + (data.committees || '') + ']}');
+                deleteButton.setAttribute('data-object', '{"id":"' + id + '", "type":"' + type + '", "name":"' + data.first_name + ' ' + data.last_name + '"}');
+            } else if (type === 'committee') {
+                editButton.setAttribute('data-object', '{"id":"' + id + '", "type":"' + type + '", "name":"' + data.name
+                    + '", "seats":"' + data.num_of_seats + '", "committee_type":"' + data.committee_type + '", "contact":"' + data.contact
+                    + '", "rep_ids":[' + (data.representatives || '') + ']}');
+                deleteButton.setAttribute('data-object', '{"id":"' + id + '", "type":"' + type + '", "name":"' + data.name + '"}');
+            } else if (type === 'meeting') {
+                editButton.setAttribute('data-object', '{"id":"' + id + '", "type":"' + type + '", "com_id":"' + data.committee
+                    + '", "date":"' + moment.utc(data.start_time).local().format('MMM D, YYYY')
+                    + '", "start_time":"' + moment.utc(data.start_time).local().format('h:mm A')
+                    + '", "end_time":"' + moment.utc(data.end_time).local().format('h:mm A') + '", "location":"' + data.location + '"}');
+                deleteButton.setAttribute('data-object', '{"id":"' + id + '", "type":"' + type + '", "name":"this meeting"}');
+            }
+            
+            menu.appendChild(editButton);
+            menu.appendChild(deleteButton);
+            return menu;
+        }
+
+    })($);
+</script>
+
+{% endblock script %}

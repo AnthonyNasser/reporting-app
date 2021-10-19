@@ -1,0 +1,15 @@
+body {
+  padding-top: 70px;
+}
+#comment {
+  white-space: pre-wrap;
+}
+.fc-more-popover {
+  width: 360px;
+}
+.panel.affix {
+  width: 15%;
+}
+.input-group-addon.glyphicon {
+  top: 0;
+}

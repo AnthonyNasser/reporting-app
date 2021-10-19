@@ -1,0 +1,113 @@
+{% extends "reservations/base.html" %}
+
+{% block title %}Inventory{% endblock %}
+
+{% block content %}
+<div class="modal fade" id="editItem" tabindex="-1" role="dialog" aria-labelledby="itemLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="itemLabel">Add a Comment</h4>
+      </div>
+      <div class="modal-body">
+      	<form id="modal-form" class="form-horizontal" action="" method="post">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="name" class="col-sm-2 control-label">Name:</label>
+				<div class="col-sm-10">
+					<p class="form-control-static" id="name"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="history" class="col-sm-2 control-label">History:</label>
+				<div class="col-sm-10">
+					<p class="form-control-static" id="history"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="comment" class="col-sm-2 control-label">Comments:</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" rows="5" name="comment" id="comment"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>			
+        </form>
+      </div>		
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2 hidden-sm hidden-xs">
+			<div class="panel panel-default" data-spy="affix" data-offset-top="60">
+				<div class="panel-heading"><h3 class="panel-title">Categories</h3></div>
+				<div class="panel-body">				
+					<nav role="navigation">
+						<ul class="nav nav-pills nav-stacked">
+							{% for c in categories %}
+							<li><a href="#{{ c.name|slugify }}">{{ c.name }}</a></li>			
+							{% endfor %}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-10 table-responsive">		
+			{% for c in categories %}
+			<table class="table table-hover table-condensed table-striped">
+				<caption id="{{ c.name|slugify }}">{{ c.name }} ({{ c.items.count }})</caption>		      
+				<thead>
+					<tr>
+						<th class="col-md-1">#</th>
+						<th class="col-md-3">Name</th>
+						<th class="col-md-2">Label</th>
+						<th class="col-md-2">Condition</th>
+						<th class="col-md-2">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in c.items.all %}
+					<tr>
+						<th scope="row">{{ forloop.counter }}</th>
+						<td>{{ item.name|capfirst }}</td>
+						<td>{{ item.label }}</td>
+						<td>{{ item.get_condition_display }}</td>
+						<td>
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editItem" data-item="{{ item.name }} - {{ item.label }}" data-item-id="{{ item.id }}" data-item-comment="{{ item.misc|linebreaksbr }}">
+								<span class="glyphicon glyphicon-comment"></span> Comment
+							</button>
+						</td>
+					</tr>
+					{% empty %}
+						<tr><td class="text-center text-uppercase" colspan="5"><h4>No items available in this category</h4></td>
+					{% endfor %}
+				</tbody>
+			</table>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+	{{ block.super }} <!-- Extend parent script files -->
+    <script>
+		$('#editItem').on('show.bs.modal', function (event) {
+			var button = $(event.relatedTarget); // Button that triggered the modal		  	
+		  var item = button.data('item'); // Extract data-item attribute
+		  var itemId = button.data('item-id'); // Extract data-item-id attribute
+		  var itemComment = button.data('item-comment'); // Extract data-item-comment attribute
+		  // Update the modal's content.
+		  var modal = $(this);
+		  modal.find('#name').text(item);
+			modal.find('#history').html(itemComment ? itemComment : 'N/A');
+		  modal.find('#modal-form').attr('action', "{% url 'reservations:inventory' %}" + itemId + "/");
+		});
+    </script>
+{% endblock script %}
